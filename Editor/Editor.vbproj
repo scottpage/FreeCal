@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>FreeCal.Editor</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <RootNamespace>FreeCal.Editor</RootNamespace>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <ProjectGuid>{0842CE7A-349A-404C-831F-8FC418B55663}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>FreeCal.Editor.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>FreeCal.Editor.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vbproj">
+      <Name>Common</Name>
+      <Project>{CCBBEF5D-F15F-4006-8EBF-07D2AB304189}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.vbproj">
+      <Name>Data</Name>
+      <Project>{F561B478-F510-461B-BD05-7155DEC68B6A}</Project>
+      <Package>{1E1A015E-B34B-4932-8974-2FC865A5D61B}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\AnalogOscilloscopes\Instruments.AnalogOscilloscopes.vbproj">
+      <Name>Instruments.AnalogOscilloscopes</Name>
+      <Project>{E9AE0CFB-4C8C-4F16-80B0-4177AB841D7D}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\AttenuatorSwitchDrivers\Instruments.AttenuatorSwitchDrivers.vbproj">
+      <Name>Instruments.AttenuatorSwitchDrivers</Name>
+      <Project>{03F30A6C-E069-4C08-82A2-F0F6393336B2}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\AudioAnalyzers\Instruments.AudioAnalyzers.vbproj">
+      <Name>Instruments.AudioAnalyzers</Name>
+      <Project>{C45CEEF0-62AA-4A74-92B5-ED36BF3EFE61}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\Counters\Instruments.Counters.vbproj">
+      <Name>Instruments.Counters</Name>
+      <Project>{401AB6C1-8299-4CFD-96DF-1D6A4921B8F5}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\DigitalMultimeters\Instruments.DigitalMultimeters.vbproj">
+      <Name>Instruments.DigitalMultimeters</Name>
+      <Project>{AB2A7E95-7B10-4EB3-BC39-F85AF985F774}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\FunctionGenerators\Instruments.FunctionGenerators.vbproj">
+      <Name>Instruments.FunctionGenerators</Name>
+      <Project>{6EA907B5-6350-43F5-8D81-18D5E5637EEA}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\Instruments.vbproj">
+      <Name>Instruments</Name>
+      <Project>{7827CF8B-37D7-4656-86FC-4EEB24C9277C}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\IntervalAnalyzers\Instruments.IntervalAnalyzers.vbproj">
+      <Name>Instruments.IntervalAnalyzers</Name>
+      <Project>{157A5DCD-25B8-478D-8358-DB27969DCE59}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\MeasuringReceivers\Instruments.MeasuringReceivers.vbproj">
+      <Name>Instruments.MeasuringReceivers</Name>
+      <Project>{E10D0ED9-3188-42D4-B7B2-E0462F405596}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\MultifunctionCalibrators\Instruments.MultifunctionCalibrators.vbproj">
+      <Name>Instruments.MultifunctionCalibrators</Name>
+      <Project>{29BEE749-EC14-4231-9E03-0B6143C823A4}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\NetworkAnalyzers\Instruments.NetworkAnalyzers.vbproj">
+      <Name>Instruments.NetworkAnalyzers</Name>
+      <Project>{CFBBF58B-9E75-457D-87D0-3481DF4833DD}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\PowerMeters\Instruments.PowerMeters.vbproj">
+      <Name>Instruments.PowerMeters</Name>
+      <Project>{F920B5A1-1B7A-4BF6-91E7-490210C665E5}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\RadioCommunicationTesters\Instruments.RadioCommunicationTesters.vbproj">
+      <Name>Instruments.RadioCommunicationTesters</Name>
+      <Project>{F9116D39-0CDA-4424-9361-496CE4AB2A47}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\SignalGenerators\Instruments.SignalGenerators.vbproj">
+      <Name>Instruments.SignalGenerators</Name>
+      <Project>{E2ABA9DB-F9B5-48E4-A257-474063EDBA9D}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\SpectrumAnalyzers\Instruments.SpectrumAnalyzers.vbproj">
+      <Name>Instruments.SpectrumAnalyzers</Name>
+      <Project>{C0614B05-8D02-475D-B341-BEC1F0AD20AD}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <Reference Include="NationalInstruments.NI4882">
+      <Name>NationalInstruments.NI4882</Name>
+      <HintPath>..\..\NationalInstruments.NI4882.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EditorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstrumentControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkAnalyzerControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PowerMeterControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProcedureWriter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SpectrumAnalyzerControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TestEditorPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="InstrumentControl.resx">
+      <DependentUpon>InstrumentControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestEditorPanel.resx">
+      <DependentUpon>TestEditorPanel.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Import Include="NationalInstruments.NI4882" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

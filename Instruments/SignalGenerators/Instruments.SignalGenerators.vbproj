@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E2ABA9DB-F9B5-48E4-A257-474063EDBA9D}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>FreeCal.Instruments.SignalGenerators</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <RootNamespace>FreeCal.Instruments.SignalGenerators</RootNamespace>
+    <StartupObject>FreeCal.Instruments.SignalGenerators.%28None%29</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>FreeCal.Instruments.SignalGenerators.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>FreeCal.Instruments.SignalGenerators.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.vbproj">
+      <Name>Common</Name>
+      <Project>{CCBBEF5D-F15F-4006-8EBF-07D2AB304189}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments.vbproj">
+      <Name>Instruments</Name>
+      <Project>{7827CF8B-37D7-4656-86FC-4EEB24C9277C}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <Reference Include="NationalInstruments.NI4882">
+      <Name>NationalInstruments.NI4882</Name>
+      <HintPath>..\..\..\NationalInstruments.NI4882.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agilent8340A.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Agilent8340B.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Agilent83651A.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Agilent8643A.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Agilent8660D.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Agilent8672A.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AgilentE4433B.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnritsuMG3696A.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFR2050.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RohdeSchwarzSMHU.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGenerator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorAmplitudeSection.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorAMSection.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorEnums.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorFMSection.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorFrequencySection.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorModulationSection.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorModules.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorPMSection.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorRFSection.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorSectionsSection.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorStructures.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignalGeneratorSweepSection.vb">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Import Include="FreeCal.Common" />
+    <Import Include="FreeCal.Instruments" />
+    <Import Include="NationalInstruments.NI4882" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

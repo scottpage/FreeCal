@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>FreeCal.Forms</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>FreeCal.Forms</RootNamespace>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <ProjectGuid>{881607A7-89CE-43D2-B71F-D664927CBCD2}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\</OutputPath>
+    <DocumentationFile>FreeCal.Forms.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DocumentationFile>FreeCal.Forms.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Pre-Release|AnyCPU' ">
+    <OutputPath>..\..\</OutputPath>
+    <DocumentationFile>FreeCal.Forms.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vbproj">
+      <Name>Common</Name>
+      <Project>{CCBBEF5D-F15F-4006-8EBF-07D2AB304189}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.vbproj">
+      <Name>Data</Name>
+      <Project>{F561B478-F510-461B-BD05-7155DEC68B6A}</Project>
+      <Package>{1E1A015E-B34B-4932-8974-2FC865A5D61B}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\Instruments.vbproj">
+      <Name>Instruments</Name>
+      <Project>{7827CF8B-37D7-4656-86FC-4EEB24C9277C}</Project>
+      <Package>{0CDA828D-C38B-47DF-BD16-76D49EE8516F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Instruments\NetworkAnalyzers\Instruments.NetworkAnalyzers.vbproj">
+      <Name>Instruments.NetworkAnalyzers</Name>
+      <Project>{CFBBF58B-9E75-457D-87D0-3481DF4833DD}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Math\Math.vbproj">
+      <Name>Math</Name>
+      <Project>{A0F87E3B-1821-4594-9952-B9FD7CC58298}</Project>
+      <Package>{FDED60E2-AC13-4104-A5D2-E8F10B10FBA8}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Procedures\Procedures.vbproj">
+      <Name>Procedures</Name>
+      <Project>{190C5DCB-1BD3-4F81-9ACD-ABBC9796098A}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <Reference Include="MySql.Data">
+      <Name>MySql.Data</Name>
+      <HintPath>..\..\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.NI4882">
+      <Name>NationalInstruments.NI4882</Name>
+      <HintPath>..\..\NationalInstruments.NI4882.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.UI">
+      <Name>NationalInstruments.UI</Name>
+      <HintPath>D:\Program Files\National Instruments\MeasurementStudio70\DotNET\Assemblies\Current\NationalInstruments.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.UI.WindowsForms">
+      <Name>NationalInstruments.UI.WindowsForms</Name>
+      <HintPath>D:\Program Files\National Instruments\MeasurementStudio70\DotNET\Assemblies\Current\NationalInstruments.UI.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="NationalInstruments.UI" />
+    <Import Include="NationalInstruments.UI.WindowsForms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutFreeCalForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CalibrationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigurationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomShapesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatabaseUtilitiesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstrumentControlForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetworkAnalyzerPointConverterForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperationProgressForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestNIControls.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="TestNIControls.resx">
+      <DependentUpon>TestNIControls.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>
