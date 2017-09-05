@@ -52,6 +52,30 @@ Partial Friend NotInheritable Class Settings
             Return defaultInstance
         End Get
     End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Server={dbServerName};Database=freecal;Username=freecal;password=password")>  _
+    Public Property DBConnectionString() As String
+        Get
+            Return CType(Me("DBConnectionString"),String)
+        End Get
+        Set
+            Me("DBConnectionString") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("localhost")>  _
+    Public Property DBServerNameOrIP() As String
+        Get
+            Return CType(Me("DBServerNameOrIP"),String)
+        End Get
+        Set
+            Me("DBServerNameOrIP") = value
+        End Set
+    End Property
 End Class
 
 Namespace My

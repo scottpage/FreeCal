@@ -216,6 +216,9 @@
     <Compile Include="TestEditorPanel.vb">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="EditorForm.resx">
+      <DependentUpon>EditorForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InstrumentControl.resx">
       <DependentUpon>InstrumentControl.vb</DependentUpon>
     </EmbeddedResource>

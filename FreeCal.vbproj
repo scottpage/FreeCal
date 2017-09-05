@@ -110,6 +110,10 @@
       <Project>{F561B478-F510-461B-BD05-7155DEC68B6A}</Project>
       <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
     </ProjectReference>
+    <ProjectReference Include="Editor\Editor.vbproj">
+      <Project>{0842ce7a-349a-404c-831f-8fc418b55663}</Project>
+      <Name>Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Forms\Forms.vbproj">
       <Name>Forms</Name>
       <Project>{881607A7-89CE-43D2-B71F-D664927CBCD2}</Project>
@@ -187,6 +191,7 @@
     <Import Include="FreeCal.Common" />
     <Import Include="FreeCal.Conversion" />
     <Import Include="FreeCal.Data" />
+    <Import Include="FreeCal.Editor" />
     <Import Include="FreeCal.Forms" />
     <Import Include="FreeCal.Logging" />
     <Import Include="FreeCal.Procedures" />

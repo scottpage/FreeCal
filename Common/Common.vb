@@ -20,7 +20,7 @@ End Module
 
 Public Module FreeCalDBConnection
 
-    Public DBConnectionString As String = "Server=localhost;Database=freecal;Username=freecal;password="
+    Public DBConnectionString As String = "Server=localhost;Database=freecal;Username=freecal;password=password"
     Public DBConnection As New MySqlConnection(DBConnectionString)
 
 End Module
@@ -431,25 +431,19 @@ Public Module Directories
     Public MainDirectory As String = My.Application.Info.DirectoryPath
     Public ProgramDirectory As String = MainDirectory
     Public ResourceDirectory As String = MainDirectory
-    Public EEPROMDataDirectory As String = MainDirectory
-    Public LogDirectory As String = MainDirectory
+    Public EEPROMDataDirectory As String = Path.Combine(MainDirectory, "EEPROM Data")
+    Public LogDirectory As String = Path.Combine(MainDirectory, "Logs")
 
     Public Sub CreateDirectories()
         Try
-            If Not Directory.Exists(MainDirectory) Then
-                Directory.CreateDirectory(MainDirectory)
+            If Not Directory.Exists(ResourceDirectory) Then
+                Directory.CreateDirectory(ResourceDirectory)
             End If
-            If Not Directory.Exists(Path.Combine(ProgramDirectory, "Resources")) Then
-                Directory.CreateDirectory(Path.Combine(ProgramDirectory, "Resources"))
+            If Not Directory.Exists(EEPROMDataDirectory) Then
+                Directory.CreateDirectory(EEPROMDataDirectory)
             End If
-            If Not Directory.Exists(Path.Combine(ProgramDirectory, "Configuration")) Then
-                Directory.CreateDirectory(Path.Combine(ProgramDirectory, "Configuration"))
-            End If
-            If Not Directory.Exists(Path.Combine(MainDirectory, "EEPROM Data")) Then
-                Directory.CreateDirectory(Path.Combine(MainDirectory, "EEPROM Data"))
-            End If
-            If Not Directory.Exists(Path.Combine(MainDirectory, "Log Files")) Then
-                Directory.CreateDirectory(Path.Combine(ProgramDirectory, "Log Files"))
+            If Not Directory.Exists(LogDirectory) Then
+                Directory.CreateDirectory(LogDirectory)
             End If
         Catch Ex As Exception
             MessageBox.Show(String.Concat("There was a problem creating the program directories.", NewLine, NewLine, "The Error Message is:", NewLine, Ex.Message, NewLine, Ex.StackTrace))

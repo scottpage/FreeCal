@@ -66,13 +66,15 @@ Public Class FreeCalMDIForm
         Me.InitializeComponent()
         Me.ClockTimer = New System.Timers.Timer
         Me.ClockTimer.Interval = 1000
-        Me.ClockTimer.Start()
         AddHandler Me.ClockTimer.Elapsed, AddressOf Me.ClockTimerElapsed
+        Me.ClockTimer.Start()
 
-        'TODO: Implement CreateFreeCalDirectories()
+        Directories.CreateDirectories()
 
-        FreeCal.Logging.Logger.CreateLog()
-        FreeCal.Logging.Logger.LoggingEnabled = True
+        Logger.CreateLog()
+        Logger.LoggingEnabled = True
+
+        Common.DBConnectionString = My.Settings.DBConnectionString.Replace("{dbServerName}", My.Settings.DBServerNameOrIP)
 
         Me.statusBar1.Panels(1).Text = DateTime.Now.ToString
         Me.statusBar1.Panels(1).Width = Me.Width - Me.statusBar1.Panels(0).Width
@@ -504,6 +506,12 @@ Public Class FreeCalMDIForm
         'Dim TNIControls As New TestNIControls
         'TNIControls.MdiParent = Me
         'TNIControls.Show()
+    End Sub
+
+    Private Sub menuItem16_Click(sender As Object, e As EventArgs) Handles menuItem16.Click
+        Dim EditorForm As New EditorForm
+        EditorForm.MdiParent = Me
+        EditorForm.Show()
     End Sub
 
 End Class
