@@ -1,4 +1,6 @@
-﻿Imports System.Reflection
+﻿Imports System.Resources
+Imports System.Runtime.InteropServices
+Imports System.Reflection
 Imports System.Runtime.CompilerServices
 
 ' Information about this assembly is defined by the following
@@ -7,14 +9,14 @@ Imports System.Runtime.CompilerServices
 ' change them to the information which is associated with the assembly
 ' you compile.
 
-<assembly: AssemblyTitle("")>
-<assembly: AssemblyDescription("")>
-<assembly: AssemblyConfiguration("")>
-<assembly: AssemblyCompany("")>
-<assembly: AssemblyProduct("")>
-<assembly: AssemblyCopyright("")>
-<assembly: AssemblyTrademark("")>
-<assembly: AssemblyCulture("")>
+<Assembly: AssemblyTitle("FreeCal.Instruments.MultifunctionCalibrators")>
+<Assembly: AssemblyDescription("FreeCal.Instruments.MultifunctionCalibrators")>
+<Assembly: AssemblyConfiguration("")>
+<Assembly: AssemblyCompany("Scott Page")>
+<Assembly: AssemblyProduct("FreeCal.Instruments.MultifunctionCalibrators")>
+<Assembly: AssemblyCopyright("Copyright © Scott Page 2017")>
+<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyCulture("")>
 
 ' The assembly version has following format :
 '
@@ -23,10 +25,14 @@ Imports System.Runtime.CompilerServices
 ' You can specify all values by your own or you can build default build and revision
 ' numbers with the '*' character (the default):
 
-<assembly: AssemblyVersion("1.0.*")>
+<Assembly: AssemblyVersion("2.0.0.*")>
 
 ' The following attributes specify the key for the sign of your assembly. See the
 ' .NET Framework documentation for more information about signing.
 ' This is not required, if you don't want signing let these attributes like they're.
-<assembly: AssemblyDelaySign(false)>
-<assembly: AssemblyKeyFile("")>
+<Assembly: AssemblyDelaySign(False)>
+<Assembly: AssemblyKeyFile("")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: ComVisible(False)>
+<Assembly: Guid("f942e986-3ac9-4df6-9dde-eee4d69b8aaa")>
+<Assembly: NeutralResourcesLanguage("en-US")>

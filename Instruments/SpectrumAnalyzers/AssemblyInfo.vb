@@ -1,3 +1,5 @@
+Imports System.Resources
+Imports System.Runtime.InteropServices
 Imports System.Reflection
 Imports System.Runtime.CompilerServices
 
@@ -7,14 +9,18 @@ Imports System.Runtime.CompilerServices
 ' change them to the information which is associated with the assembly
 ' you compile.
 
-<assembly: AssemblyTitle("FreeCal Instrument")>
-<assembly: AssemblyDescription("FreeCal Spectrum Analyzers")>
-<assembly: AssemblyConfiguration("")>
-<assembly: AssemblyCompany("Scott Page")>
-<assembly: AssemblyProduct("FreeCal")>
-<assembly: AssemblyCopyright("2005")>
-<assembly: AssemblyTrademark("2005")>
-<assembly: AssemblyCulture("")>
-<assembly: AssemblyVersion("2.0.0.0")>
-<assembly: AssemblyDelaySign(false)>
-<assembly: AssemblyKeyFile("")>
+<Assembly: AssemblyTitle("FreeCal.Instruments.SpectrumAnalyzers")>
+<Assembly: AssemblyDescription("FreeCal.Instruments.SpectrumAnalyzers")>
+<Assembly: AssemblyConfiguration("")>
+<Assembly: AssemblyCompany("Scott Page")>
+<Assembly: AssemblyProduct("FreeCal.Instruments.SpectrumAnalyzers")>
+<Assembly: AssemblyCopyright("Copyright © Scott Page 2017")>
+<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyCulture("")>
+<Assembly: AssemblyVersion("2.0.0.*")>
+<Assembly: AssemblyDelaySign(False)>
+<Assembly: AssemblyKeyFile("")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: ComVisible(False)>
+<Assembly: Guid("f45b03c7-47e2-484e-b8e0-2e5690c73af8")>
+<Assembly: NeutralResourcesLanguage("en-US")>
