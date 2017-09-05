@@ -90,7 +90,7 @@ Imports System.ComponentModel
 
 		#Region "Methods"
 
-        Public Sub New(ByVal boardAddress As Integer, ByVal primaryAddress As Integer, ByVal getSettingsFromInstrument As Boolean, Optional ByVal simulate As Boolean = False)
+        Public Sub New(ByVal boardAddress As Integer, ByVal primaryAddress As Byte, ByVal getSettingsFromInstrument As Boolean, Optional ByVal simulate As Boolean = False)
 		    MyBase.New(BoardAddress, PrimaryAddress, GetSettingsFromInstrument, Simulate)
 		End Sub
 

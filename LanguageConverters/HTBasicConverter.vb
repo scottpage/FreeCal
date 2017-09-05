@@ -11,30 +11,31 @@ Imports System
 Imports System.IO
 Imports System.Collections
 Imports Microsoft.VisualBasic.ControlChars
+Imports Microsoft.VisualBasic
 
-	Public Class HTBasicConverter
+Public Class HTBasicConverter
 
-		Private MyFileStream As FileStream
-		Private MyStreamReader As StreamReader
-		Private HTBasicFileToConvert As String
-		Public FileToConvertLines As New ArrayList
-		Public NewConvertedFile As New ArrayList
+    Private MyFileStream As FileStream
+    Private MyStreamReader As StreamReader
+    Private HTBasicFileToConvert As String
+    Public FileToConvertLines As New ArrayList
+    Public NewConvertedFile As New ArrayList
 
-		Public Sub New(ByVal fileToConvert As String)
-			Me.HTBasicFileToConvert = FileToConvert
-			Me.MyFileStream = New FileStream(FileToConvert, FileMode.Open)
-			Me.MyStreamReader = New StreamReader(Me.MyFileStream)
-			Dim FileContents As String = Me.MyStreamReader.ReadToEnd()
-			Me.FileToConvertLines.AddRange(FileContents.Split(NewLine))
-		End Sub
+    Public Sub New(ByVal fileToConvert As String)
+        Me.HTBasicFileToConvert = fileToConvert
+        Me.MyFileStream = New FileStream(fileToConvert, FileMode.Open)
+        Me.MyStreamReader = New StreamReader(Me.MyFileStream)
+        Dim FileContents As String = Me.MyStreamReader.ReadToEnd()
+        Me.FileToConvertLines.AddRange(FileContents.Replace(ControlChars.Cr, "").Split(ControlChars.Lf))
+    End Sub
 
-		Public Sub Convert()
-			For Each Line As String In Me.FileToConvertLines
-				If Line.StartsWith("ASSIGN") Then
-					Me.NewConvertedFile.Add(Line)
-				End If
-			Next
-		End Sub
+    Public Sub Convert()
+        For Each Line As String In Me.FileToConvertLines
+            If Line.StartsWith("ASSIGN") Then
+                Me.NewConvertedFile.Add(Line)
+            End If
+        Next
+    End Sub
 
-	End Class
+End Class
 

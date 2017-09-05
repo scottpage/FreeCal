@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="NationalInstruments.NI4882" />
+    <Import Include="System.Collections.Generic" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

@@ -14,7 +14,7 @@ Imports FreeCal.Instruments
 	Public Class Agilent11713A
         Inherits FreeCal.Instruments.AttenuatorSwitchDrivers.AttenuatorSwitchDriver
 
-        Public Sub New(ByVal boardAddress As Integer, ByVal primaryAddress As Integer, ByVal getSettingsFromInstrument As Boolean, Optional ByVal simulate As Boolean = False)
+        Public Sub New(ByVal boardAddress As Integer, ByVal primaryAddress As Byte, ByVal getSettingsFromInstrument As Boolean, Optional ByVal simulate As Boolean = False)
 		    MyBase.New(BoardAddress, PrimaryAddress, GetSettingsFromInstrument, Simulate)
 		    Me._Manufacturer = "Agilent Technologies"
 		    Me._Model = "11713A"

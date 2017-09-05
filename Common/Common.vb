@@ -221,8 +221,8 @@ Public Module GlobalFunctions
         Next
     End Sub
 
-    Public Function GetActiveGPIBBusses() As ArrayList
-        Dim ActiveBoards As New ArrayList
+    Public Function GetActiveGPIBBusNames() As List(Of String)
+        Dim ActiveBoards As New List(Of String)
         Dim Board0 As Board = Nothing
         Dim Board1 As Board = Nothing
         Dim Board2 As Board = Nothing
@@ -269,8 +269,8 @@ Public Module GlobalFunctions
         Return ActiveBoards
     End Function
 
-    Public Function GetGPIBBusDevices(ByVal gPIBBoardToSearch As Boards) As ArrayList
-        Dim BusDevices As New ArrayList
+    Public Function GetGPIBBusAddresses(ByVal gPIBBoardToSearch As Boards) As List(Of Byte)
+        Dim BusDevices As New List(Of Byte)
         Dim MyBoard As Board = Nothing
         Try
             MyBoard = New Board(gPIBBoardToSearch)
@@ -335,7 +335,7 @@ Public Enum InstrumentStatusFlags As Integer
     Attention = 8
 End Enum
 
-Public Enum Boards
+Public Enum Boards As Integer
     GPIB0 = 0
     GPIB1 = 1
     GPIB2 = 2

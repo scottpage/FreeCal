@@ -225,9 +225,9 @@ Imports NationalInstruments.NI4882
 		
 		Private Sub Button1Click(sender As System.Object, e As System.EventArgs)
 			Dim NewSpectrumAnalyzerProcedure As New SpectrumAnalyzerProcedure(Me.tbDUTAssetNumber.Text)
-            NewSpectrumAnalyzerProcedure.DUTAddress = Me.nudDUTAddress.Value
-            NewSpectrumAnalyzerProcedure.DUTBusNumber = Me.nudBusAddress.Value
-            NewSpectrumAnalyzerProcedure.DUTAssetNumber = Me.tbDUTAssetNumber.Text
+        NewSpectrumAnalyzerProcedure.DUTAddress = Convert.ToByte(Me.nudDUTAddress.Value)
+        NewSpectrumAnalyzerProcedure.DUTBusNumber = Convert.ToInt32(Me.nudBusAddress.Value)
+        NewSpectrumAnalyzerProcedure.DUTAssetNumber = Me.tbDUTAssetNumber.Text
             NewSpectrumAnalyzerProcedure.AllTests
 			If Me.cboDUTModel.Text = "Agilent 8643A" Then
 	        ElseIf Me.cboDUTModel.Text = "IFR 2050" Then
@@ -236,9 +236,9 @@ Imports NationalInstruments.NI4882
 		
 		Private Sub Button2Click(sender As System.Object, e As System.EventArgs)
 			Dim NewSpectrumAnalyzerProcedure As New SpectrumAnalyzerProcedure(Me.tbDUTAssetNumber.Text)
-            NewSpectrumAnalyzerProcedure.DUTAddress = Me.nudDUTAddress.Value
-            NewSpectrumAnalyzerProcedure.DUTBusNumber = Me.nudBusAddress.Value
-            NewSpectrumAnalyzerProcedure.DUTAssetNumber = Me.tbDUTAssetNumber.Text
+        NewSpectrumAnalyzerProcedure.DUTAddress = Convert.ToByte(Me.nudDUTAddress.Value)
+        NewSpectrumAnalyzerProcedure.DUTBusNumber = Convert.ToInt32(Me.nudBusAddress.Value)
+        NewSpectrumAnalyzerProcedure.DUTAssetNumber = Me.tbDUTAssetNumber.Text
 			If Me.cboDUTModel.Text = "Agilent 8643A" Then
 			ElseIf Me.cboDUTModel.Text = "IFR 2050" Then
 			End If

@@ -15,7 +15,7 @@ Imports System.ComponentModel
 	Public Class Agilent8564EC
         Inherits FreeCal.Instruments.SpectrumAnalyzers.SpectrumAnalyzer
 
-        Public Sub New(ByVal boardAddress As Integer, ByVal primaryAddress As Integer, ByVal getSettingsFromInstrument As Boolean, Optional ByVal simulate As Boolean = False)
+        Public Sub New(ByVal boardAddress As Integer, ByVal primaryAddress As Byte, ByVal getSettingsFromInstrument As Boolean, Optional ByVal simulate As Boolean = False)
 		    MyBase.New(BoardAddress, PrimaryAddress, GetSettingsFromInstrument, Simulate)
 		    Me._Model = "8564EC"
 		    Me._Manufacturer = "Agilent Technologies"

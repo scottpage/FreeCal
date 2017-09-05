@@ -89,12 +89,12 @@ Public Class InstrumentControl
         Dim StringSize As SizeF = e.Graphics.MeasureString(Me._Instrument.Model & ", " & Me._Instrument.PrimaryAddress, New Font("Comic Sans MS", FS))
         Dim X As Integer = 0
         Dim Y As Integer = 0
-        X = (Me.Width - StringSize.Width) / 2
+        X = Convert.ToInt32((Me.Width - StringSize.Width) / 2)
         e.Graphics.DrawString(Me._Instrument.Model & ", " & Me._Instrument.PrimaryAddress, New Font("Comic Sans MS", FS), New SolidBrush(FC), X, Y)
 
         StringSize = e.Graphics.MeasureString(Me._PaintInformation, New Font("Comic Sans MS", FS))
-        X = (Me.Width - StringSize.Width) / 2
-        Y = (Me.Height - StringSize.Height)
+        X = Convert.ToInt32((Me.Width - StringSize.Width) / 2)
+        Y = Convert.ToInt32(Me.Height - StringSize.Height)
         e.Graphics.DrawString(Me._PaintInformation, New Font("Comic Sans MS", FS), New SolidBrush(FC), X, Y)
     End Sub
 

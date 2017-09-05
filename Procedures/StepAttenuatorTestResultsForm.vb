@@ -129,8 +129,8 @@ Imports FreeCal.Common
 			Dim Proc As New StepAttenuatorProcedure(Me.tbAssetNumber.Text, Me.dgResults)
 			Proc.ResultForm = Me
 			Dim FrequencySuffixes As FrequencyEnum
-			Proc.MeasureDUT(CDbl(Me.tbTestFrequency.Text), CType([Enum].Parse(FrequencySuffixes.GetType, Me.cbTestFrequencySuffix.SelectedItem), FrequencyEnum), CDbl(Me.tbMaxAttenuation.Text), CInt(Me.tbWaitTime.Text))
-		End Sub
+        Proc.MeasureDUT(CDbl(Me.tbTestFrequency.Text), CType([Enum].Parse(FrequencySuffixes.GetType, Me.cbTestFrequencySuffix.SelectedItem.ToString), FrequencyEnum), CDbl(Me.tbMaxAttenuation.Text), CInt(Me.tbWaitTime.Text))
+    End Sub
 		
 	End Class
 

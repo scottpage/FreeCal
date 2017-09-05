@@ -142,9 +142,9 @@ Imports FreeCal.Instruments.PowerMeters
 		#End Region
 
 		Private Sub BtnOkClick(sender As System.Object, e As System.EventArgs)
-			Me.SelectedReferenceSensorSerialNumber = Me.cbReference.SelectedItem
-			Me.SelectedStandardSensorSerialNumber = Me.cbStandard.SelectedItem
-		End Sub
+        Me.SelectedReferenceSensorSerialNumber = Me.cbReference.SelectedItem.ToString
+        Me.SelectedStandardSensorSerialNumber = Me.cbStandard.SelectedItem.ToString
+    End Sub
 
 		Private Sub BtnCancelClick(sender As System.Object, e As System.EventArgs)
 			Me.Close

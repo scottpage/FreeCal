@@ -18,16 +18,18 @@
     <OutputType>Library</OutputType>
     <OptionCompare>Binary</OptionCompare>
     <OptionExplicit>On</OptionExplicit>
-    <OptionStrict>Off</OptionStrict>
+    <OptionStrict>On</OptionStrict>
     <RootNamespace>FreeCal.Procedures</RootNamespace>
     <StartupObject />
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <ProjectGuid>{190C5DCB-1BD3-4F81-9ACD-ABBC9796098A}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\</OutputPath>
@@ -41,10 +43,12 @@
     <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningLevel>1</WarningLevel>
-    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <NoWarn>42353,42354,42355</NoWarn>
     <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>..\bin\Release\</OutputPath>
@@ -58,10 +62,12 @@
     <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningLevel>1</WarningLevel>
-    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <NoWarn>42353,42354,42355</NoWarn>
     <DebugType>none</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Pre-Release|AnyCPU' ">
     <OutputPath>..\..\</OutputPath>
@@ -75,10 +81,15 @@
     <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningLevel>1</WarningLevel>
-    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <NoWarn>42353,42354,42355</NoWarn>
     <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.vbproj">
@@ -205,8 +216,7 @@
       <Name>System.XML</Name>
     </Reference>
     <Reference Include="ZedGraph">
-      <Name>ZedGraph</Name>
-      <HintPath>..\..\ZedGraph.dll</HintPath>
+      <HintPath>..\..\..\Downloads\ZedGraph\ZedGraph.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +240,16 @@
     </Compile>
     <Compile Include="MicrowaveCounterProcedureStandardsForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="PowerSensorCalibrationChartForm.vb">
       <SubType>Form</SubType>
@@ -285,22 +305,30 @@
     <EmbeddedResource Include="Agilent8487AProcedure.resx">
       <DependentUpon>Agilent8487AProcedure.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FreeCal.Procedures.Agilent8487AProcedure.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.Dialogs.ImageDialog.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.Dialogs.TextDialog.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.DigitalMultimeterProcedureForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.ImageDialog.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.LongTermOscillatorStabilityProcedureForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.LongTermOscillatorStabilityStandardsForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.PowerSensorCalibrationChartForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.PowerSensorProcedureForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.PowerSensorProcedureStdRefSNForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.PowerSensorTestFrequencyForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.PowerSensorTestResultsForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.RequiredInstruments.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.StepAttenuatorTestResultsForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.TestResultsForm.resources" />
-    <EmbeddedResource Include="FreeCal.Procedures.TextDialog.resources" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Import Include="FreeCal.Common" />
+    <Import Include="FreeCal.Conversion" />
+    <Import Include="FreeCal.Data" />
+    <Import Include="FreeCal.DialogBoxes" />
+    <Import Include="FreeCal.Instruments" />
+    <Import Include="FreeCal.Logging" />
+    <Import Include="MySql.Data.MySqlClient" />
+    <Import Include="NationalInstruments.NI4882" />
+    <Import Include="System" />
+    <Import Include="ZedGraph" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>

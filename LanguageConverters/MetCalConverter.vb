@@ -17,16 +17,16 @@ Imports Microsoft.VisualBasic
 Public Class MetCalConverter
     Inherits System.Windows.Forms.Form
     Private ModifedText As String
-    Private fdLoadFile As System.Windows.Forms.OpenFileDialog
-    Private btnSave As System.Windows.Forms.Button
-    Private btnLoad As System.Windows.Forms.Button
-    Private btnConvert As System.Windows.Forms.Button
-    Private tbSaveFile As System.Windows.Forms.TextBox
-    Private tbLoadFile As System.Windows.Forms.TextBox
-    Private tbModified As System.Windows.Forms.TextBox
-    Private btnBrowseForLoadFile As System.Windows.Forms.Button
-    Private tbLoaded As System.Windows.Forms.TextBox
-    Private btnBrowseForSaveFile As System.Windows.Forms.Button
+    Private WithEvents fdLoadFile As System.Windows.Forms.OpenFileDialog
+    Private WithEvents btnSave As System.Windows.Forms.Button
+    Private WithEvents btnLoad As System.Windows.Forms.Button
+    Private WithEvents btnConvert As System.Windows.Forms.Button
+    Private WithEvents tbSaveFile As System.Windows.Forms.TextBox
+    Private WithEvents tbLoadFile As System.Windows.Forms.TextBox
+    Private WithEvents tbModified As System.Windows.Forms.TextBox
+    Private WithEvents btnBrowseForLoadFile As System.Windows.Forms.Button
+    Private WithEvents tbLoaded As System.Windows.Forms.TextBox
+    Private WithEvents btnBrowseForSaveFile As System.Windows.Forms.Button
 
     Public Shared Sub Main()
         Dim fMainForm As New MetCalConverter
@@ -46,106 +46,101 @@ Public Class MetCalConverter
     ' Do not change the method contents inside the source code editor. The Forms designer might
     ' not be able to load this method if it was changed manually.
     Private Sub InitializeComponent()
-        Me.btnBrowseForSaveFile = New System.Windows.Forms.Button
-        Me.tbLoaded = New System.Windows.Forms.TextBox
-        Me.btnBrowseForLoadFile = New System.Windows.Forms.Button
-        Me.tbModified = New System.Windows.Forms.TextBox
-        Me.tbLoadFile = New System.Windows.Forms.TextBox
-        Me.tbSaveFile = New System.Windows.Forms.TextBox
-        Me.btnConvert = New System.Windows.Forms.Button
-        Me.btnLoad = New System.Windows.Forms.Button
-        Me.btnSave = New System.Windows.Forms.Button
-        Me.fdLoadFile = New System.Windows.Forms.OpenFileDialog
+        Me.btnBrowseForSaveFile = New System.Windows.Forms.Button()
+        Me.tbLoaded = New System.Windows.Forms.TextBox()
+        Me.btnBrowseForLoadFile = New System.Windows.Forms.Button()
+        Me.tbModified = New System.Windows.Forms.TextBox()
+        Me.tbLoadFile = New System.Windows.Forms.TextBox()
+        Me.tbSaveFile = New System.Windows.Forms.TextBox()
+        Me.btnConvert = New System.Windows.Forms.Button()
+        Me.btnLoad = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.fdLoadFile = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'btnBrowseForSaveFile
         '
         Me.btnBrowseForSaveFile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnBrowseForSaveFile.Location = New System.Drawing.Point(744, 384)
+        Me.btnBrowseForSaveFile.Location = New System.Drawing.Point(1488, 804)
         Me.btnBrowseForSaveFile.Name = "btnBrowseForSaveFile"
-        Me.btnBrowseForSaveFile.Size = New System.Drawing.Size(24, 23)
+        Me.btnBrowseForSaveFile.Size = New System.Drawing.Size(48, 42)
         Me.btnBrowseForSaveFile.TabIndex = 8
         Me.btnBrowseForSaveFile.Text = "..."
-        AddHandler Me.btnBrowseForSaveFile.Click, AddressOf Me.BtnBrowseForSaveFileClick
         '
         'tbLoaded
         '
-        Me.tbLoaded.Location = New System.Drawing.Point(8, 8)
+        Me.tbLoaded.Location = New System.Drawing.Point(16, 15)
         Me.tbLoaded.MaxLength = 100000
         Me.tbLoaded.Multiline = True
         Me.tbLoaded.Name = "tbLoaded"
         Me.tbLoaded.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.tbLoaded.Size = New System.Drawing.Size(376, 368)
+        Me.tbLoaded.Size = New System.Drawing.Size(752, 679)
         Me.tbLoaded.TabIndex = 0
-        Me.tbLoaded.Text = ""
         Me.tbLoaded.WordWrap = False
         '
         'btnBrowseForLoadFile
         '
         Me.btnBrowseForLoadFile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnBrowseForLoadFile.Location = New System.Drawing.Point(360, 384)
+        Me.btnBrowseForLoadFile.Location = New System.Drawing.Point(720, 804)
         Me.btnBrowseForLoadFile.Name = "btnBrowseForLoadFile"
-        Me.btnBrowseForLoadFile.Size = New System.Drawing.Size(24, 23)
+        Me.btnBrowseForLoadFile.Size = New System.Drawing.Size(48, 42)
         Me.btnBrowseForLoadFile.TabIndex = 7
         Me.btnBrowseForLoadFile.Text = "..."
-        AddHandler Me.btnBrowseForLoadFile.Click, AddressOf Me.BtnBrowseForLoadFileClick
         '
         'tbModified
         '
-        Me.tbModified.Location = New System.Drawing.Point(392, 8)
+        Me.tbModified.Location = New System.Drawing.Point(784, 15)
         Me.tbModified.MaxLength = 200000
         Me.tbModified.Multiline = True
         Me.tbModified.Name = "tbModified"
         Me.tbModified.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.tbModified.Size = New System.Drawing.Size(376, 368)
+        Me.tbModified.Size = New System.Drawing.Size(752, 679)
         Me.tbModified.TabIndex = 2
-        Me.tbModified.Text = ""
         Me.tbModified.WordWrap = False
         '
         'tbLoadFile
         '
         Me.tbLoadFile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.tbLoadFile.Location = New System.Drawing.Point(8, 384)
+        Me.tbLoadFile.Location = New System.Drawing.Point(16, 804)
         Me.tbLoadFile.Name = "tbLoadFile"
-        Me.tbLoadFile.Size = New System.Drawing.Size(352, 20)
+        Me.tbLoadFile.Size = New System.Drawing.Size(704, 31)
         Me.tbLoadFile.TabIndex = 5
-        Me.tbLoadFile.Text = "C:\Documents and Settings\Amber\Desktop\Agilent8564E\Agilent8564E.txt"
+        Me.tbLoadFile.Text = "Agilent8564E\Agilent8564E.txt"
         '
         'tbSaveFile
         '
         Me.tbSaveFile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.tbSaveFile.Location = New System.Drawing.Point(392, 384)
+        Me.tbSaveFile.Location = New System.Drawing.Point(784, 804)
         Me.tbSaveFile.Name = "tbSaveFile"
-        Me.tbSaveFile.Size = New System.Drawing.Size(352, 20)
+        Me.tbSaveFile.Size = New System.Drawing.Size(704, 31)
         Me.tbSaveFile.TabIndex = 6
-        Me.tbSaveFile.Text = ""
         '
         'btnConvert
         '
         Me.btnConvert.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnConvert.Location = New System.Drawing.Point(352, 416)
+        Me.btnConvert.Location = New System.Drawing.Point(704, 863)
         Me.btnConvert.Name = "btnConvert"
+        Me.btnConvert.Size = New System.Drawing.Size(150, 42)
         Me.btnConvert.TabIndex = 1
         Me.btnConvert.Text = "Convert"
-        AddHandler Me.btnConvert.Click, AddressOf Me.BtnConvertClick
         '
         'btnLoad
         '
         Me.btnLoad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnLoad.Location = New System.Drawing.Point(136, 416)
+        Me.btnLoad.Location = New System.Drawing.Point(272, 863)
         Me.btnLoad.Name = "btnLoad"
+        Me.btnLoad.Size = New System.Drawing.Size(150, 42)
         Me.btnLoad.TabIndex = 3
         Me.btnLoad.Text = "Load"
-        AddHandler Me.btnLoad.Click, AddressOf Me.BtnLoadClick
         '
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnSave.Location = New System.Drawing.Point(552, 416)
+        Me.btnSave.Location = New System.Drawing.Point(1104, 863)
         Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(150, 42)
         Me.btnSave.TabIndex = 4
         Me.btnSave.Text = "Save"
-        AddHandler Me.btnSave.Click, AddressOf Me.BtnSaveClick
         '
         'fdLoadFile
         '
@@ -154,8 +149,8 @@ Public Class MetCalConverter
         '
         'MetCalConverter
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(776, 446)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.ClientSize = New System.Drawing.Size(1600, 918)
         Me.Controls.Add(Me.btnBrowseForSaveFile)
         Me.Controls.Add(Me.btnBrowseForLoadFile)
         Me.Controls.Add(Me.tbSaveFile)
@@ -168,10 +163,12 @@ Public Class MetCalConverter
         Me.Name = "MetCalConverter"
         Me.Text = "MainForm"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 #End Region
 
-    Private Sub BtnLoadClick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub BtnLoadClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLoad.Click
         If Not File.Exists(Me.tbLoadFile.Text.Trim) Then
             MessageBox.Show("You must select a valid file to load from before proceeding!")
             Return
@@ -182,13 +179,13 @@ Public Class MetCalConverter
         SR.Close()
     End Sub
 
-    Private Sub BtnBrowseForLoadFileClick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub BtnBrowseForLoadFileClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBrowseForLoadFile.Click
         If Me.fdLoadFile.ShowDialog = DialogResult.OK Then
             Me.tbLoadFile.Text = Me.fdLoadFile.FileName
         End If
     End Sub
 
-    Private Sub BtnBrowseForSaveFileClick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub BtnBrowseForSaveFileClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBrowseForSaveFile.Click
         Dim FI As New FileInfo(Me.tbLoadFile.Text.Trim)
         Me.fdLoadFile.InitialDirectory = FI.DirectoryName
         If Me.fdLoadFile.ShowDialog = DialogResult.OK Then
@@ -199,7 +196,7 @@ Public Class MetCalConverter
         End If
     End Sub
 
-    Private Sub BtnConvertClick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub BtnConvertClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConvert.Click
         Me.ModifedText = ""
         Me.tbModified.Text = ""
         For Each CurrentLine As String In Me.tbLoaded.Lines
@@ -213,7 +210,7 @@ Public Class MetCalConverter
         Me.tbModified.Text = Me.ModifedText
     End Sub
 
-    Private Sub BtnSaveClick(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub BtnSaveClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
         If Not File.Exists(Me.tbSaveFile.Text.Trim) Then
             MessageBox.Show("You must provide a valid filename and directory to save!")
             Return
@@ -228,11 +225,12 @@ Public Class MetCalConverter
         If currentLine.Length > 9 Then
             Return currentLine.Remove(0, 8) & NewLine
         End If
+        Return currentLine
     End Function
 
     Private Function ProcessDelayTime(ByVal currentLine As String) As String
-        Dim ModifiedLine As String
-        If InStr(currentLine, "[D") Then
+        Dim ModifiedLine As String = String.Empty
+        If currentLine.Contains("[D") Then
             Dim BeginingSegment As String = currentLine.Substring(0, currentLine.IndexOf("[D"))
             Dim RemainingSegment As String = currentLine.Replace(BeginingSegment, "")
             BeginingSegment = BeginingSegment.Replace("IEEE", "").Trim
@@ -241,7 +239,7 @@ Public Class MetCalConverter
             ModifiedLine = ModifiedLine & "Me.Sleep(" & TimeSegment.Replace("[D", "").Replace("]", "") & ")" & NewLine
             RemainingSegment = RemainingSegment.Remove(0, RemainingSegment.IndexOf("]") + 1)
             ModifiedLine = ModifiedLine & RemainingSegment & NewLine
-            If InStr(RemainingSegment, "[D") Then
+            If RemainingSegment.Contains("[D") Then
                 currentLine = RemainingSegment
                 BeginingSegment = currentLine.Substring(0, currentLine.IndexOf("[D"))
                 RemainingSegment = currentLine.Replace(BeginingSegment, "")
@@ -251,7 +249,7 @@ Public Class MetCalConverter
                 ModifiedLine = ModifiedLine & "Me.Sleep(" & TimeSegment.Replace("[D", "").Replace("]", "") & ")" & NewLine
                 RemainingSegment = RemainingSegment.Remove(0, RemainingSegment.IndexOf("]") + 1)
                 ModifiedLine = ModifiedLine & RemainingSegment & NewLine
-                If InStr(RemainingSegment, "[D") Then
+                If RemainingSegment.Contains("[D") Then
                     currentLine = RemainingSegment
                     BeginingSegment = currentLine.Substring(0, currentLine.IndexOf("[D"))
                     RemainingSegment = currentLine.Replace(BeginingSegment, "")
@@ -287,6 +285,7 @@ Public Class MetCalConverter
             '			End If
             Return ModifiedLine
         End If
+        Return ModifiedLine
     End Function
 
 End Class

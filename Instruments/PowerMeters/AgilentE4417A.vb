@@ -5,17 +5,12 @@
 ' Time: 8:05 AM
 ' 
 
-Imports System
-Imports FreeCal.Common
-Imports System.Windows.Forms
-Imports NationalInstruments.NI4882
-Imports FreeCal.Instruments
-Imports System.Data
-Imports System.Collections
-Imports System.IO
-Imports Microsoft.VisualBasic.ControlChars
-Imports System.Threading
 Imports System.ComponentModel
+Imports System.Data
+Imports System.IO
+Imports System.Threading
+Imports System.Windows.Forms
+Imports Microsoft.VisualBasic.ControlChars
 
 
 <TypeConverter(GetType(ExpandableObjectConverter))>
@@ -26,10 +21,10 @@ Public Class AgilentE4417A
     Public dtCalibrationFactors As DataTable
     Public PowerSensorModelNumber As String
     Public PowerSensorSerialNumber As String
-    Public EEPROMData As New ArrayList
+    Public EEPROMData As New List(Of Byte)
     Public EEPROMDataHasBeenDownloaded As Boolean = False
 
-    Public Sub New(ByVal boardAddress As Integer, ByVal primaryAddress As Integer, ByVal getSettingsFromInstrument As Boolean, Optional ByVal simulate As Boolean = False)
+    Public Sub New(ByVal boardAddress As Integer, ByVal primaryAddress As Byte, ByVal getSettingsFromInstrument As Boolean, Optional ByVal simulate As Boolean = False)
         MyBase.New(boardAddress, primaryAddress, getSettingsFromInstrument, simulate)
         Me._Model = "E4417A"
         Me._Manufacturer = "Agilent Technologies"
@@ -127,7 +122,7 @@ Public Class AgilentE4417A
         Me.dtBytes = New DataTable("Bytes")
         Me.dtBytes.Columns.Add(New DataColumn("Memory Location"))
         Me.dtBytes.Columns.Add(New DataColumn("Byte Value"))
-        Dim GPIB0 As Board
+        Dim GPIB0 As Board = Nothing
         Me.EEPROMData.Clear()
 
         Try
@@ -235,14 +230,14 @@ Public Class AgilentE4417A
             FS.SetLength(0)
             Dim SW As New StreamWriter(FS)
             For Each DR As DataRow In Me.dtBytes.Rows
-                SW.WriteLine(DR(0) & "," & DR(1))
+                SW.WriteLine(DR(0).ToString & "," & DR(1).ToString)
             Next
             SW.Close()
             Me.EEPROMDataHasBeenDownloaded = True
         Catch Ex As Exception
             MessageBox.Show(Ex.ToString)
         Finally
-            If Not (GPIB0 Is Nothing) Then
+            If GPIB0 IsNot Nothing Then
                 GPIB0.Dispose()
             End If
         End Try
@@ -250,27 +245,27 @@ Public Class AgilentE4417A
 
     Public Sub UploadPowerSensorEEPROM()
         If Me.EEPROMDataHasBeenDownloaded Then
-            Dim GPIB0 As Board
+            Dim GPIB0 As Board = Nothing
             Try
                 GPIB0 = New Board(0)
                 GPIB0.SendInterfaceClear()
                 GPIB0.AcquireInterfaceLock(10000)
                 If Me.PowerSensorModelNumber = "E4413A" Then
                     Me.Write("INIT:CONT OFF")
-                    Dim Data As New ArrayList
-                    Dim T As String
+                    Dim Data As New List(Of Byte)
+                    Dim T As String = String.Empty
                     For RowNumber As Integer = 0 To 38
-                        Dim ConvertedFrequencyValue As Int32 = (Me.dtCalibrationFactors.Rows(RowNumber)(2)) * 1000
+                        Dim ConvertedFrequencyValue = Convert.ToInt32(Me.dtCalibrationFactors.Rows(RowNumber)(2)) * 1000
                         Dim TempData() As Byte = BitConverter.GetBytes(ConvertedFrequencyValue)
                         For I As Integer = 3 To 0 Step -1
                             Data.Add(TempData(I))
                         Next
-                        Dim ConvertedCalFactorValue As Integer = 2 ^ 14 * (Me.dtCalibrationFactors.Rows(RowNumber)(3)) / 100
+                        Dim ConvertedCalFactorValue = 2 ^ 14 * Convert.ToInt32(Me.dtCalibrationFactors.Rows(RowNumber)(3)) / 100
                         TempData = BitConverter.GetBytes(ConvertedCalFactorValue)
                         For I As Integer = 1 To 0 Step -1
                             Data.Add(TempData(I))
                         Next
-                        ConvertedCalFactorValue = 2 ^ 14 * (Me.dtCalibrationFactors.Rows(RowNumber)(4)) / 100
+                        ConvertedCalFactorValue = 2 ^ 14 * Convert.ToInt32(Me.dtCalibrationFactors.Rows(RowNumber)(4)) / 100
                         TempData = BitConverter.GetBytes(ConvertedCalFactorValue)
                         For I As Integer = 1 To 0 Step -1
                             Data.Add(TempData(I))
@@ -281,7 +276,7 @@ Public Class AgilentE4417A
                         T = T & MemLoc & " " & V & NewLine
                         MemLoc += 1
                     Next
-                    Dim FS As FileStream = File.Open("C:\Documents and Settings\rspage\Desktop\Sensor Data2\Sensor Data\test.txt", FileMode.OpenOrCreate)
+                    Dim FS As FileStream = File.Open(EEPROMDataDirectory & "\test.txt", FileMode.OpenOrCreate)
                     Dim SW As New StreamWriter(FS)
                     SW.Write(T)
                     SW.Close()

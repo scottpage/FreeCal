@@ -158,7 +158,7 @@ Public Class EditorForm
             Me.cbAddress.Items.Add(I)
         Next
         Me.cbAddress.SelectedIndex = 0
-        Dim FCResources As String = "FreeCal.Instruments."
+        Dim FCResources As String = ResourceDirectory & "\FreeCal.Instruments."
         'Dim FCResources As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\FreeCalVS\Program\Resources\FreeCal.Instruments."
         Dim SignalGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(FCResources & "Microwave.SignalGenerators.dll")
         For Each Res As [Type] In SignalGeneratorAssembly.GetTypes
@@ -242,7 +242,7 @@ Public Class EditorForm
         Me.propertyGrid1.SelectedObject = newinstrument.Instrument
         Dim MatchedRow As Integer = -1
         For I As Integer = 0 To Me.cbAddress.Items.Count - 1
-            If Me.cbAddress.Items(I) = newinstrument.Instrument.PrimaryAddress Then
+            If Convert.ToByte(Me.cbAddress.Items(I)) = newinstrument.Instrument.PrimaryAddress Then
                 MatchedRow = I
             End If
         Next

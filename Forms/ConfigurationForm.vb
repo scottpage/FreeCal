@@ -502,8 +502,8 @@ Public Class ConfigurationForm
 #End Region
 
     Private Sub ColorButtonClick(ByVal sender As Object, ByVal e As EventArgs)
-        If Me.SelectColorDialog.ShowDialog(Me) Then
-            sender.BackColor = Me.SelectColorDialog.Color
+        If Me.SelectColorDialog.ShowDialog(Me) = DialogResult.OK Then
+            DirectCast(sender, Control).BackColor = Me.SelectColorDialog.Color
         End If
     End Sub
 

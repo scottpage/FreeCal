@@ -5,21 +5,11 @@
 ' Time: 10:24 PM
 ' 
 
-
-Imports System
-Imports System.Drawing
 Imports System.Windows.Forms
-Imports FreeCal.Forms
-Imports System.Threading
-Imports FreeCal.Common
-Imports FreeCal.Data
-Imports System.IO
-Imports FreeCal.Procedures
-Imports FreeCal.Conversion
-
 
 Public Class FreeCalMDIForm
     Inherits System.Windows.Forms.Form
+
     Private WithEvents ClockTimer As System.Timers.Timer
     Private components As System.ComponentModel.Container
     Private WithEvents menuItem14 As System.Windows.Forms.MenuItem
@@ -68,10 +58,6 @@ Public Class FreeCalMDIForm
     Private WithEvents menuItem22 As System.Windows.Forms.MenuItem
     Private WithEvents menuItem19 As System.Windows.Forms.MenuItem
 
-    Public Shared Sub Main()
-        Application.Run(New FreeCalMDIForm)
-    End Sub
-
     Public Sub New()
         MyBase.New()
         '
@@ -82,9 +68,12 @@ Public Class FreeCalMDIForm
         Me.ClockTimer.Interval = 1000
         Me.ClockTimer.Start()
         AddHandler Me.ClockTimer.Elapsed, AddressOf Me.ClockTimerElapsed
-        CreateFreeCalDirectories()
+
+        'TODO: Implement CreateFreeCalDirectories()
+
         FreeCal.Logging.Logger.CreateLog()
         FreeCal.Logging.Logger.LoggingEnabled = True
+
         Me.statusBar1.Panels(1).Text = DateTime.Now.ToString
         Me.statusBar1.Panels(1).Width = Me.Width - Me.statusBar1.Panels(0).Width
     End Sub
@@ -425,7 +414,12 @@ Public Class FreeCalMDIForm
 #End Region
 
     Private Sub ClockTimerElapsed(ByVal sender As Object, ByVal E As System.Timers.ElapsedEventArgs)
-        Me.statusBar1.Panels(1).Text = DateTime.Now.ToString
+        If InvokeRequired Then
+            Dim Invoker As New Timers.ElapsedEventHandler(AddressOf ClockTimerElapsed)
+            Invoke(Invoker, sender, E)
+        Else
+            statusBar1.Panels(1).Text = DateTime.Now.ToString
+        End If
     End Sub
 
     Protected Overloads Overrides Sub OnResize(ByVal e As EventArgs)
@@ -443,7 +437,7 @@ Public Class FreeCalMDIForm
     End Sub
 
     Private Sub MiLogViewerClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles miLogViewer.Click
-        Dim LogViewer As New FreeCal.Logging.RunTimeLogViewerForm
+        Dim LogViewer As New RunTimeLogViewerForm
         LogViewer.MdiParent = Me
         LogViewer.Show()
     End Sub
@@ -504,10 +498,11 @@ Public Class FreeCalMDIForm
     End Sub
 
     Private Sub MenuItem17_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem17.Click
-        Dim TNIControls As New TestNIControls
-        TNIControls.MdiParent = Me
-        TNIControls.Show()
+        'Dim TNIControls As New TestNIControls
+        'TNIControls.MdiParent = Me
+        'TNIControls.Show()
     End Sub
+
 End Class
 
 
