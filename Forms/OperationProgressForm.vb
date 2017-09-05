@@ -47,44 +47,45 @@ Imports System.ComponentModel
 		' Do not change the method contents inside the source code editor. The Forms designer might
 		' not be able to load this method if it was changed manually.
 		Private Sub InitializeComponent()
-			Me.lblMessage = New System.Windows.Forms.Label
-			Me.progressBar1 = New System.Windows.Forms.ProgressBar
-			Me.SuspendLayout
-			'
-			'lblMessage
-			'
-			Me.lblMessage.Font = New System.Drawing.Font("Tahoma", 20!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0,Byte))
-			Me.lblMessage.Location = New System.Drawing.Point(8, 8)
-			Me.lblMessage.Name = "lblMessage"
-			Me.lblMessage.Size = New System.Drawing.Size(496, 136)
-			Me.lblMessage.TabIndex = 1
-			Me.lblMessage.Text = "Message"
-			Me.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-			'
-			'progressBar1
-			'
-			Me.progressBar1.Location = New System.Drawing.Point(8, 152)
-			Me.progressBar1.Name = "progressBar1"
-			Me.progressBar1.Size = New System.Drawing.Size(496, 23)
-			Me.progressBar1.TabIndex = 0
-			'
-			'OperationProgressForm
-			'
-			Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-			Me.ClientSize = New System.Drawing.Size(512, 181)
-			Me.Controls.Add(Me.lblMessage)
-			Me.Controls.Add(Me.progressBar1)
-			Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-			Me.MaximizeBox = false
-			Me.MinimizeBox = false
-			Me.Name = "OperationProgressForm"
-			Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-			Me.Text = "OperationProgressForm"
-			Me.ResumeLayout(false)
-		End Sub
-		#End Region
+        Me.lblMessage = New System.Windows.Forms.Label()
+        Me.progressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.SuspendLayout()
+        '
+        'lblMessage
+        '
+        Me.lblMessage.Font = New System.Drawing.Font("Tahoma", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
+        Me.lblMessage.Location = New System.Drawing.Point(16, 15)
+        Me.lblMessage.Name = "lblMessage"
+        Me.lblMessage.Size = New System.Drawing.Size(992, 251)
+        Me.lblMessage.TabIndex = 1
+        Me.lblMessage.Text = "Message"
+        Me.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'progressBar1
+        '
+        Me.progressBar1.Location = New System.Drawing.Point(16, 281)
+        Me.progressBar1.Name = "progressBar1"
+        Me.progressBar1.Size = New System.Drawing.Size(992, 42)
+        Me.progressBar1.TabIndex = 0
+        '
+        'OperationProgressForm
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.ClientSize = New System.Drawing.Size(1031, 342)
+        Me.Controls.Add(Me.lblMessage)
+        Me.Controls.Add(Me.progressBar1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "OperationProgressForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "OperationProgressForm"
+        Me.ResumeLayout(False)
 
-		<Category("Progress"), Description("Title of this progress window.")> _
+    End Sub
+#End Region
+
+    <Category("Progress"), Description("Title of this progress window.")> _
 		Public Property Title As String
 			Get
 				Return Me.Text

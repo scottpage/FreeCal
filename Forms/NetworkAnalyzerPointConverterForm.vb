@@ -114,7 +114,7 @@ Public Class NetworkAnalyzerPointConverterForm
         'NetworkAnalyzerPointConverterForm
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
-        Me.ClientSize = New System.Drawing.Size(825, 717)
+        Me.ClientSize = New System.Drawing.Size(851, 715)
         Me.Controls.Add(Me.btnConvert)
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.btnCancel)

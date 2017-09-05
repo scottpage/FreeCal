@@ -187,6 +187,15 @@
     <Compile Include="WorkForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="ConfigurationForm.resx">
+      <DependentUpon>ConfigurationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomShapesForm.resx">
+      <DependentUpon>CustomShapesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseUtilitiesForm.resx">
+      <DependentUpon>DatabaseUtilitiesForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InstrumentControlForm.resx">
       <DependentUpon>InstrumentControlForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NetworkAnalyzerPointConverterForm.resx">
       <DependentUpon>NetworkAnalyzerPointConverterForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationProgressForm.resx">
+      <DependentUpon>OperationProgressForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkForm.resx">
+      <DependentUpon>WorkForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

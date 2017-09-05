@@ -30,27 +30,28 @@ Imports System.Windows.Forms
 		' Do not change the method contents inside the source code editor. The Forms designer might
 		' not be able to load this method if it was changed manually.
 		Private Sub InitializeComponent()
-			Me.splitter1 = New System.Windows.Forms.Splitter
-			Me.SuspendLayout
-			'
-			'splitter1
-			'
-			Me.splitter1.Location = New System.Drawing.Point(0, 0)
-			Me.splitter1.Name = "splitter1"
-			Me.splitter1.Size = New System.Drawing.Size(3, 430)
-			Me.splitter1.TabIndex = 0
-			Me.splitter1.TabStop = false
-			'
-			'CustomShapesForm
-			'
-			Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
-			Me.ClientSize = New System.Drawing.Size(592, 430)
-			Me.Controls.Add(Me.splitter1)
-			Me.Name = "CustomShapesForm"
-			Me.Text = "CustomShapesForm"
-			Me.ResumeLayout(false)
-		End Sub
-		#End Region
-		
-	End Class
+        Me.splitter1 = New System.Windows.Forms.Splitter()
+        Me.SuspendLayout()
+        '
+        'splitter1
+        '
+        Me.splitter1.Location = New System.Drawing.Point(0, 0)
+        Me.splitter1.Name = "splitter1"
+        Me.splitter1.Size = New System.Drawing.Size(6, 818)
+        Me.splitter1.TabIndex = 0
+        Me.splitter1.TabStop = False
+        '
+        'CustomShapesForm
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.ClientSize = New System.Drawing.Size(1364, 818)
+        Me.Controls.Add(Me.splitter1)
+        Me.Name = "CustomShapesForm"
+        Me.Text = "CustomShapesForm"
+        Me.ResumeLayout(False)
+
+    End Sub
+#End Region
+
+End Class
 

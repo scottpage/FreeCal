@@ -41,19 +41,21 @@ Public Class WorkForm
     ' Do not change the method contents inside the source code editor. The Forms designer might
     ' not be able to load this method if it was changed manually.
     Private Sub InitializeComponent()
+        Me.SuspendLayout()
         '
         'WorkForm
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(648, 461)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.ClientSize = New System.Drawing.Size(1280, 824)
         Me.Name = "WorkForm"
         Me.Text = "WorkForm"
-        AddHandler Paint, AddressOf Me.WorkFormPaint
+        Me.ResumeLayout(False)
+
     End Sub
 #End Region
 
 
-    Private Sub WorkFormPaint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs)
+    Private Sub WorkFormPaint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles MyBase.Paint
     End Sub
 
 End Class
