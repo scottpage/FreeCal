@@ -5,21 +5,14 @@
 ' Time: 9:19 AM
 ' 
 
-
 Imports System
-Imports System.Drawing
 Imports System.Windows.Forms
 Imports FreeCal.Common
-Imports System.Threading
-Imports NationalInstruments.NI4882
-Imports Microsoft.VisualBasic
-Imports Microsoft.VisualBasic.ControlChars
-Imports System.Collections
 Imports FreeCal.Instruments
+Imports Microsoft.VisualBasic
+Imports NationalInstruments.NI4882
 
-
-
-Public Enum InstrumentDataTypeEnum
+Public Enum InstrumentDataTypeEnum As Integer
     [String]
     [Single]
     [Double]
@@ -33,36 +26,37 @@ End Enum
 
 Public Class InstrumentControlForm
     Inherits System.Windows.Forms.Form
-    Private chbReadNumberOfBytes As System.Windows.Forms.CheckBox
-    Private lblTimeout As System.Windows.Forms.Label
-    Private btnConnect As System.Windows.Forms.Button
-    Private lblBus As System.Windows.Forms.Label
-    Private LoopTimer As System.Timers.Timer
-    Private btnConvertBinary As System.Windows.Forms.Button
-    Private cbNotifyStatusFlag As System.Windows.Forms.ComboBox
-    Private tbCommands As System.Windows.Forms.TextBox
-    Private btnRead As System.Windows.Forms.Button
-    Private tbSentData As System.Windows.Forms.TextBox
-    Private lblPrimaryAddress As System.Windows.Forms.Label
-    Private btnSend As System.Windows.Forms.Button
-    Private chkLoop As System.Windows.Forms.CheckBox
-    Private chkLoopNotify As System.Windows.Forms.CheckBox
-    Private tbReceivedData As System.Windows.Forms.TextBox
-    Private btnStopLoop As System.Windows.Forms.Button
-    Private btnClearReceivedData As System.Windows.Forms.Button
-    Private tbReadNumberOfBytes As System.Windows.Forms.TextBox
-    Private cbInsertNewLineOnWrite As System.Windows.Forms.CheckBox
-    Private btnDisconnect As System.Windows.Forms.Button
-    Private cbReadDataType As System.Windows.Forms.ComboBox
-    Private btnQuery As System.Windows.Forms.Button
-    Private btnClearSentData As System.Windows.Forms.Button
-    Private cbBusDevices As System.Windows.Forms.ComboBox
-    Private btnNotify As System.Windows.Forms.Button
-    Private cbBoards As System.Windows.Forms.ComboBox
-    Private cbTimeout As System.Windows.Forms.ComboBox
-    Private gbNotify As System.Windows.Forms.GroupBox
-    Private lblCommands As System.Windows.Forms.Label
-    Private btnTrigger As System.Windows.Forms.Button
+
+    Private WithEvents chbReadNumberOfBytes As System.Windows.Forms.CheckBox
+    Private WithEvents lblTimeout As System.Windows.Forms.Label
+    Private WithEvents btnConnect As System.Windows.Forms.Button
+    Private WithEvents lblBus As System.Windows.Forms.Label
+    Private WithEvents LoopTimer As System.Timers.Timer
+    Private WithEvents btnConvertBinary As System.Windows.Forms.Button
+    Private WithEvents cbNotifyStatusFlag As System.Windows.Forms.ComboBox
+    Private WithEvents tbCommands As System.Windows.Forms.TextBox
+    Private WithEvents btnRead As System.Windows.Forms.Button
+    Private WithEvents tbSentData As System.Windows.Forms.TextBox
+    Private WithEvents lblPrimaryAddress As System.Windows.Forms.Label
+    Private WithEvents btnSend As System.Windows.Forms.Button
+    Private WithEvents chkLoop As System.Windows.Forms.CheckBox
+    Private WithEvents chkLoopNotify As System.Windows.Forms.CheckBox
+    Private WithEvents tbReceivedData As System.Windows.Forms.TextBox
+    Private WithEvents btnStopLoop As System.Windows.Forms.Button
+    Private WithEvents btnClearReceivedData As System.Windows.Forms.Button
+    Private WithEvents tbReadNumberOfBytes As System.Windows.Forms.TextBox
+    Private WithEvents cbInsertNewLineOnWrite As System.Windows.Forms.CheckBox
+    Private WithEvents btnDisconnect As System.Windows.Forms.Button
+    Private WithEvents cbReadDataType As System.Windows.Forms.ComboBox
+    Private WithEvents btnQuery As System.Windows.Forms.Button
+    Private WithEvents btnClearSentData As System.Windows.Forms.Button
+    Private WithEvents cbBusDevices As System.Windows.Forms.ComboBox
+    Private WithEvents btnNotify As System.Windows.Forms.Button
+    Private WithEvents cbBoards As System.Windows.Forms.ComboBox
+    Private WithEvents cbTimeout As System.Windows.Forms.ComboBox
+    Private WithEvents gbNotify As System.Windows.Forms.GroupBox
+    Private WithEvents lblCommands As System.Windows.Forms.Label
+    Private WithEvents btnTrigger As System.Windows.Forms.Button
 
     Private CurrentGPIBDevice As Instrument
 
@@ -81,322 +75,305 @@ Public Class InstrumentControlForm
     ' Do not change the method contents inside the source code editor. The Forms designer might
     ' not be able to load this method if it was changed manually.
     Private Sub InitializeComponent()
-        Me.btnTrigger = New System.Windows.Forms.Button
-        Me.lblCommands = New System.Windows.Forms.Label
-        Me.gbNotify = New System.Windows.Forms.GroupBox
-        Me.cbTimeout = New System.Windows.Forms.ComboBox
-        Me.cbBoards = New System.Windows.Forms.ComboBox
-        Me.btnNotify = New System.Windows.Forms.Button
-        Me.cbBusDevices = New System.Windows.Forms.ComboBox
-        Me.btnClearSentData = New System.Windows.Forms.Button
-        Me.btnQuery = New System.Windows.Forms.Button
-        Me.cbReadDataType = New System.Windows.Forms.ComboBox
-        Me.btnDisconnect = New System.Windows.Forms.Button
-        Me.cbInsertNewLineOnWrite = New System.Windows.Forms.CheckBox
-        Me.tbReadNumberOfBytes = New System.Windows.Forms.TextBox
-        Me.btnClearReceivedData = New System.Windows.Forms.Button
-        Me.btnStopLoop = New System.Windows.Forms.Button
-        Me.tbReceivedData = New System.Windows.Forms.TextBox
-        Me.chkLoopNotify = New System.Windows.Forms.CheckBox
-        Me.chkLoop = New System.Windows.Forms.CheckBox
-        Me.btnSend = New System.Windows.Forms.Button
-        Me.lblPrimaryAddress = New System.Windows.Forms.Label
-        Me.tbSentData = New System.Windows.Forms.TextBox
-        Me.btnRead = New System.Windows.Forms.Button
-        Me.tbCommands = New System.Windows.Forms.TextBox
-        Me.cbNotifyStatusFlag = New System.Windows.Forms.ComboBox
-        Me.btnConvertBinary = New System.Windows.Forms.Button
-        Me.LoopTimer = New System.Timers.Timer
-        Me.lblBus = New System.Windows.Forms.Label
-        Me.btnConnect = New System.Windows.Forms.Button
-        Me.lblTimeout = New System.Windows.Forms.Label
-        Me.chbReadNumberOfBytes = New System.Windows.Forms.CheckBox
+        Me.btnTrigger = New System.Windows.Forms.Button()
+        Me.lblCommands = New System.Windows.Forms.Label()
+        Me.gbNotify = New System.Windows.Forms.GroupBox()
+        Me.cbNotifyStatusFlag = New System.Windows.Forms.ComboBox()
+        Me.chkLoopNotify = New System.Windows.Forms.CheckBox()
+        Me.btnNotify = New System.Windows.Forms.Button()
+        Me.cbTimeout = New System.Windows.Forms.ComboBox()
+        Me.cbBoards = New System.Windows.Forms.ComboBox()
+        Me.cbBusDevices = New System.Windows.Forms.ComboBox()
+        Me.btnClearSentData = New System.Windows.Forms.Button()
+        Me.btnQuery = New System.Windows.Forms.Button()
+        Me.cbReadDataType = New System.Windows.Forms.ComboBox()
+        Me.btnDisconnect = New System.Windows.Forms.Button()
+        Me.cbInsertNewLineOnWrite = New System.Windows.Forms.CheckBox()
+        Me.tbReadNumberOfBytes = New System.Windows.Forms.TextBox()
+        Me.btnClearReceivedData = New System.Windows.Forms.Button()
+        Me.btnStopLoop = New System.Windows.Forms.Button()
+        Me.tbReceivedData = New System.Windows.Forms.TextBox()
+        Me.chkLoop = New System.Windows.Forms.CheckBox()
+        Me.btnSend = New System.Windows.Forms.Button()
+        Me.lblPrimaryAddress = New System.Windows.Forms.Label()
+        Me.tbSentData = New System.Windows.Forms.TextBox()
+        Me.btnRead = New System.Windows.Forms.Button()
+        Me.tbCommands = New System.Windows.Forms.TextBox()
+        Me.btnConvertBinary = New System.Windows.Forms.Button()
+        Me.LoopTimer = New System.Timers.Timer()
+        Me.lblBus = New System.Windows.Forms.Label()
+        Me.btnConnect = New System.Windows.Forms.Button()
+        Me.lblTimeout = New System.Windows.Forms.Label()
+        Me.chbReadNumberOfBytes = New System.Windows.Forms.CheckBox()
         Me.gbNotify.SuspendLayout()
         CType(Me.LoopTimer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnTrigger
         '
-        Me.btnTrigger.Location = New System.Drawing.Point(272, 96)
+        Me.btnTrigger.Location = New System.Drawing.Point(544, 177)
         Me.btnTrigger.Name = "btnTrigger"
+        Me.btnTrigger.Size = New System.Drawing.Size(150, 43)
         Me.btnTrigger.TabIndex = 18
         Me.btnTrigger.Text = "Trigger"
-        AddHandler Me.btnTrigger.Click, AddressOf Me.BtnTriggerClick
         '
         'lblCommands
         '
         Me.lblCommands.AutoSize = True
-        Me.lblCommands.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
-        Me.lblCommands.Location = New System.Drawing.Point(8, 56)
+        Me.lblCommands.Location = New System.Drawing.Point(16, 103)
         Me.lblCommands.Name = "lblCommands"
-        Me.lblCommands.Size = New System.Drawing.Size(145, 17)
+        Me.lblCommands.Size = New System.Drawing.Size(264, 25)
         Me.lblCommands.TabIndex = 4
-        Me.lblCommands.Text = "Enter commands to send"
+        Me.lblCommands.Text = "Enter command(s) to send"
         '
         'gbNotify
         '
         Me.gbNotify.Controls.Add(Me.cbNotifyStatusFlag)
         Me.gbNotify.Controls.Add(Me.chkLoopNotify)
         Me.gbNotify.Controls.Add(Me.btnNotify)
-        Me.gbNotify.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
-        Me.gbNotify.Location = New System.Drawing.Point(616, 32)
+        Me.gbNotify.Location = New System.Drawing.Point(1232, 59)
         Me.gbNotify.Name = "gbNotify"
-        Me.gbNotify.Size = New System.Drawing.Size(160, 80)
+        Me.gbNotify.Size = New System.Drawing.Size(320, 148)
         Me.gbNotify.TabIndex = 24
         Me.gbNotify.TabStop = False
         Me.gbNotify.Text = "Notify"
         '
+        'cbNotifyStatusFlag
+        '
+        Me.cbNotifyStatusFlag.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
+        Me.cbNotifyStatusFlag.Location = New System.Drawing.Point(16, 44)
+        Me.cbNotifyStatusFlag.Name = "cbNotifyStatusFlag"
+        Me.cbNotifyStatusFlag.Size = New System.Drawing.Size(242, 21)
+        Me.cbNotifyStatusFlag.TabIndex = 24
+        '
+        'chkLoopNotify
+        '
+        Me.chkLoopNotify.Location = New System.Drawing.Point(192, 89)
+        Me.chkLoopNotify.Name = "chkLoopNotify"
+        Me.chkLoopNotify.Size = New System.Drawing.Size(112, 44)
+        Me.chkLoopNotify.TabIndex = 23
+        Me.chkLoopNotify.Text = "Loop"
+        '
+        'btnNotify
+        '
+        Me.btnNotify.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
+        Me.btnNotify.Location = New System.Drawing.Point(16, 89)
+        Me.btnNotify.Name = "btnNotify"
+        Me.btnNotify.Size = New System.Drawing.Size(160, 42)
+        Me.btnNotify.TabIndex = 22
+        Me.btnNotify.Text = "Start Notify"
+        '
         'cbTimeout
         '
-        Me.cbTimeout.Location = New System.Drawing.Point(392, 24)
+        Me.cbTimeout.Location = New System.Drawing.Point(784, 44)
         Me.cbTimeout.Name = "cbTimeout"
-        Me.cbTimeout.Size = New System.Drawing.Size(121, 21)
+        Me.cbTimeout.Size = New System.Drawing.Size(242, 33)
         Me.cbTimeout.TabIndex = 14
         Me.cbTimeout.Text = "T1s"
         '
         'cbBoards
         '
-        Me.cbBoards.Location = New System.Drawing.Point(64, 24)
+        Me.cbBoards.Location = New System.Drawing.Point(128, 44)
         Me.cbBoards.Name = "cbBoards"
-        Me.cbBoards.Size = New System.Drawing.Size(121, 21)
+        Me.cbBoards.Size = New System.Drawing.Size(242, 33)
         Me.cbBoards.TabIndex = 7
-        AddHandler Me.cbBoards.SelectedIndexChanged, AddressOf Me.CbBoardsSelectedIndexChanged
-        '
-        'btnNotify
-        '
-        Me.btnNotify.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
-        Me.btnNotify.Location = New System.Drawing.Point(8, 48)
-        Me.btnNotify.Name = "btnNotify"
-        Me.btnNotify.Size = New System.Drawing.Size(80, 23)
-        Me.btnNotify.TabIndex = 22
-        Me.btnNotify.Text = "Start Notify"
-        AddHandler Me.btnNotify.Click, AddressOf Me.BtnNotifyClick
         '
         'cbBusDevices
         '
-        Me.cbBusDevices.Location = New System.Drawing.Point(256, 24)
+        Me.cbBusDevices.Location = New System.Drawing.Point(512, 44)
         Me.cbBusDevices.Name = "cbBusDevices"
-        Me.cbBusDevices.Size = New System.Drawing.Size(80, 21)
+        Me.cbBusDevices.Size = New System.Drawing.Size(160, 33)
         Me.cbBusDevices.TabIndex = 16
         '
         'btnClearSentData
         '
-        Me.btnClearSentData.Location = New System.Drawing.Point(712, 168)
+        Me.btnClearSentData.Location = New System.Drawing.Point(1472, 213)
         Me.btnClearSentData.Name = "btnClearSentData"
-        Me.btnClearSentData.Size = New System.Drawing.Size(96, 23)
+        Me.btnClearSentData.Size = New System.Drawing.Size(192, 43)
         Me.btnClearSentData.TabIndex = 27
         Me.btnClearSentData.Text = "Clear Sent Data"
-        AddHandler Me.btnClearSentData.Click, AddressOf Me.BtnClearSentDataClick
         '
         'btnQuery
         '
         Me.btnQuery.Enabled = False
-        Me.btnQuery.Location = New System.Drawing.Point(184, 96)
+        Me.btnQuery.Location = New System.Drawing.Point(368, 177)
         Me.btnQuery.Name = "btnQuery"
+        Me.btnQuery.Size = New System.Drawing.Size(150, 43)
         Me.btnQuery.TabIndex = 2
         Me.btnQuery.Text = "Query"
-        AddHandler Me.btnQuery.Click, AddressOf Me.BtnQueryClick
         '
         'cbReadDataType
         '
-        Me.cbReadDataType.Location = New System.Drawing.Point(96, 120)
+        Me.cbReadDataType.Location = New System.Drawing.Point(192, 222)
         Me.cbReadDataType.Name = "cbReadDataType"
-        Me.cbReadDataType.Size = New System.Drawing.Size(80, 21)
+        Me.cbReadDataType.Size = New System.Drawing.Size(160, 33)
         Me.cbReadDataType.TabIndex = 25
         '
         'btnDisconnect
         '
         Me.btnDisconnect.Enabled = False
-        Me.btnDisconnect.Location = New System.Drawing.Point(536, 96)
+        Me.btnDisconnect.Location = New System.Drawing.Point(1072, 177)
         Me.btnDisconnect.Name = "btnDisconnect"
+        Me.btnDisconnect.Size = New System.Drawing.Size(150, 43)
         Me.btnDisconnect.TabIndex = 13
         Me.btnDisconnect.Text = "Disconnect"
-        AddHandler Me.btnDisconnect.Click, AddressOf Me.BtnDisconnectClick
         '
         'cbInsertNewLineOnWrite
         '
-        Me.cbInsertNewLineOnWrite.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
-        Me.cbInsertNewLineOnWrite.Location = New System.Drawing.Point(264, 120)
+        Me.cbInsertNewLineOnWrite.Location = New System.Drawing.Point(528, 222)
         Me.cbInsertNewLineOnWrite.Name = "cbInsertNewLineOnWrite"
-        Me.cbInsertNewLineOnWrite.Size = New System.Drawing.Size(128, 24)
+        Me.cbInsertNewLineOnWrite.Size = New System.Drawing.Size(256, 44)
         Me.cbInsertNewLineOnWrite.TabIndex = 29
         Me.cbInsertNewLineOnWrite.Text = "Newline on Write"
         '
         'tbReadNumberOfBytes
         '
-        Me.tbReadNumberOfBytes.Location = New System.Drawing.Point(608, 8)
+        Me.tbReadNumberOfBytes.Location = New System.Drawing.Point(1216, 15)
         Me.tbReadNumberOfBytes.Name = "tbReadNumberOfBytes"
-        Me.tbReadNumberOfBytes.Size = New System.Drawing.Size(79, 20)
+        Me.tbReadNumberOfBytes.Size = New System.Drawing.Size(158, 31)
         Me.tbReadNumberOfBytes.TabIndex = 21
-        Me.tbReadNumberOfBytes.Text = ""
         '
         'btnClearReceivedData
         '
-        Me.btnClearReceivedData.Location = New System.Drawing.Point(360, 96)
+        Me.btnClearReceivedData.Location = New System.Drawing.Point(720, 177)
         Me.btnClearReceivedData.Name = "btnClearReceivedData"
+        Me.btnClearReceivedData.Size = New System.Drawing.Size(150, 43)
         Me.btnClearReceivedData.TabIndex = 15
         Me.btnClearReceivedData.Text = "Clear Data"
-        AddHandler Me.btnClearReceivedData.Click, AddressOf Me.BtnClearReceivedDataClick
         '
         'btnStopLoop
         '
-        Me.btnStopLoop.Location = New System.Drawing.Point(520, 8)
+        Me.btnStopLoop.Location = New System.Drawing.Point(1040, 15)
         Me.btnStopLoop.Name = "btnStopLoop"
-        Me.btnStopLoop.Size = New System.Drawing.Size(80, 23)
+        Me.btnStopLoop.Size = New System.Drawing.Size(160, 42)
         Me.btnStopLoop.TabIndex = 19
         Me.btnStopLoop.Text = "Stop Looping"
-        AddHandler Me.btnStopLoop.Click, AddressOf Me.BtnStopLoopClick
         '
         'tbReceivedData
         '
         Me.tbReceivedData.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.tbReceivedData.BackColor = System.Drawing.Color.SteelBlue
         Me.tbReceivedData.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbReceivedData.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
         Me.tbReceivedData.ForeColor = System.Drawing.Color.Yellow
-        Me.tbReceivedData.Location = New System.Drawing.Point(8, 144)
+        Me.tbReceivedData.Location = New System.Drawing.Point(16, 266)
         Me.tbReceivedData.Multiline = True
         Me.tbReceivedData.Name = "tbReceivedData"
         Me.tbReceivedData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tbReceivedData.Size = New System.Drawing.Size(680, 320)
+        Me.tbReceivedData.Size = New System.Drawing.Size(1360, 800)
         Me.tbReceivedData.TabIndex = 5
-        Me.tbReceivedData.Text = ""
-        '
-        'chkLoopNotify
-        '
-        Me.chkLoopNotify.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
-        Me.chkLoopNotify.Location = New System.Drawing.Point(96, 48)
-        Me.chkLoopNotify.Name = "chkLoopNotify"
-        Me.chkLoopNotify.Size = New System.Drawing.Size(56, 24)
-        Me.chkLoopNotify.TabIndex = 23
-        Me.chkLoopNotify.Text = "Loop"
         '
         'chkLoop
         '
         Me.chkLoop.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
-        Me.chkLoop.Location = New System.Drawing.Point(528, 40)
+        Me.chkLoop.Location = New System.Drawing.Point(1056, 74)
         Me.chkLoop.Name = "chkLoop"
-        Me.chkLoop.Size = New System.Drawing.Size(56, 24)
+        Me.chkLoop.Size = New System.Drawing.Size(112, 44)
         Me.chkLoop.TabIndex = 17
         Me.chkLoop.Text = "Loop"
         '
         'btnSend
         '
         Me.btnSend.Enabled = False
-        Me.btnSend.Location = New System.Drawing.Point(8, 96)
+        Me.btnSend.Location = New System.Drawing.Point(16, 177)
         Me.btnSend.Name = "btnSend"
+        Me.btnSend.Size = New System.Drawing.Size(150, 43)
         Me.btnSend.TabIndex = 0
         Me.btnSend.Text = "Send"
-        AddHandler Me.btnSend.Click, AddressOf Me.BtnSendClick
         '
         'lblPrimaryAddress
         '
         Me.lblPrimaryAddress.AutoSize = True
-        Me.lblPrimaryAddress.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
-        Me.lblPrimaryAddress.Location = New System.Drawing.Point(248, 8)
+        Me.lblPrimaryAddress.Location = New System.Drawing.Point(496, 15)
         Me.lblPrimaryAddress.Name = "lblPrimaryAddress"
-        Me.lblPrimaryAddress.Size = New System.Drawing.Size(98, 17)
+        Me.lblPrimaryAddress.Size = New System.Drawing.Size(170, 25)
         Me.lblPrimaryAddress.TabIndex = 8
         Me.lblPrimaryAddress.Text = "Primary Address"
         '
         'tbSentData
         '
         Me.tbSentData.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbSentData.BackColor = System.Drawing.Color.SlateGray
         Me.tbSentData.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbSentData.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
         Me.tbSentData.ForeColor = System.Drawing.Color.Yellow
-        Me.tbSentData.Location = New System.Drawing.Point(696, 192)
+        Me.tbSentData.Location = New System.Drawing.Point(1392, 266)
         Me.tbSentData.Multiline = True
         Me.tbSentData.Name = "tbSentData"
         Me.tbSentData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tbSentData.Size = New System.Drawing.Size(136, 272)
+        Me.tbSentData.Size = New System.Drawing.Size(351, 800)
         Me.tbSentData.TabIndex = 26
-        Me.tbSentData.Text = ""
         '
         'btnRead
         '
         Me.btnRead.Enabled = False
-        Me.btnRead.Location = New System.Drawing.Point(96, 96)
+        Me.btnRead.Location = New System.Drawing.Point(192, 177)
         Me.btnRead.Name = "btnRead"
-        Me.btnRead.Size = New System.Drawing.Size(80, 23)
+        Me.btnRead.Size = New System.Drawing.Size(160, 43)
         Me.btnRead.TabIndex = 1
         Me.btnRead.Text = "Read"
-        AddHandler Me.btnRead.Click, AddressOf Me.BtnReadClick
         '
         'tbCommands
         '
-        Me.tbCommands.Location = New System.Drawing.Point(8, 72)
+        Me.tbCommands.Location = New System.Drawing.Point(16, 133)
         Me.tbCommands.Name = "tbCommands"
-        Me.tbCommands.Size = New System.Drawing.Size(600, 20)
+        Me.tbCommands.Size = New System.Drawing.Size(1200, 31)
         Me.tbCommands.TabIndex = 3
-        Me.tbCommands.Text = ""
-        '
-        'cbNotifyStatusFlag
-        '
-        Me.cbNotifyStatusFlag.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
-        Me.cbNotifyStatusFlag.Location = New System.Drawing.Point(8, 24)
-        Me.cbNotifyStatusFlag.Name = "cbNotifyStatusFlag"
-        Me.cbNotifyStatusFlag.TabIndex = 24
-        AddHandler Me.cbNotifyStatusFlag.KeyPress, AddressOf Me.CbNotifyStatusFlagKeyPress
         '
         'btnConvertBinary
         '
-        Me.btnConvertBinary.Location = New System.Drawing.Point(184, 120)
+        Me.btnConvertBinary.Location = New System.Drawing.Point(368, 222)
         Me.btnConvertBinary.Name = "btnConvertBinary"
+        Me.btnConvertBinary.Size = New System.Drawing.Size(150, 42)
         Me.btnConvertBinary.TabIndex = 28
         Me.btnConvertBinary.Text = "Convert"
-        AddHandler Me.btnConvertBinary.Click, AddressOf Me.BtnConvertBinaryClick
         '
         'LoopTimer
         '
-        Me.LoopTimer.Interval = 500
+        Me.LoopTimer.Interval = 500.0R
         Me.LoopTimer.SynchronizingObject = Me
-        AddHandler Me.LoopTimer.Elapsed, AddressOf Me.LoopTimerElapsed
         '
         'lblBus
         '
         Me.lblBus.AutoSize = True
-        Me.lblBus.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
-        Me.lblBus.Location = New System.Drawing.Point(112, 8)
+        Me.lblBus.Location = New System.Drawing.Point(224, 15)
         Me.lblBus.Name = "lblBus"
-        Me.lblBus.Size = New System.Drawing.Size(25, 17)
+        Me.lblBus.Size = New System.Drawing.Size(49, 25)
         Me.lblBus.TabIndex = 6
         Me.lblBus.Text = "Bus"
         '
         'btnConnect
         '
-        Me.btnConnect.Location = New System.Drawing.Point(448, 96)
+        Me.btnConnect.Location = New System.Drawing.Point(896, 177)
         Me.btnConnect.Name = "btnConnect"
+        Me.btnConnect.Size = New System.Drawing.Size(150, 43)
         Me.btnConnect.TabIndex = 12
         Me.btnConnect.Text = "Connect"
-        AddHandler Me.btnConnect.Click, AddressOf Me.BtnConnectClick
         '
         'lblTimeout
         '
         Me.lblTimeout.AutoSize = True
-        Me.lblTimeout.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World)
-        Me.lblTimeout.Location = New System.Drawing.Point(424, 8)
+        Me.lblTimeout.Location = New System.Drawing.Point(848, 15)
         Me.lblTimeout.Name = "lblTimeout"
-        Me.lblTimeout.Size = New System.Drawing.Size(51, 17)
+        Me.lblTimeout.Size = New System.Drawing.Size(89, 25)
         Me.lblTimeout.TabIndex = 10
         Me.lblTimeout.Text = "Timeout"
         '
         'chbReadNumberOfBytes
         '
-        Me.chbReadNumberOfBytes.Location = New System.Drawing.Point(696, 0)
+        Me.chbReadNumberOfBytes.Location = New System.Drawing.Point(1392, 0)
         Me.chbReadNumberOfBytes.Name = "chbReadNumberOfBytes"
-        Me.chbReadNumberOfBytes.Size = New System.Drawing.Size(136, 40)
+        Me.chbReadNumberOfBytes.Size = New System.Drawing.Size(272, 74)
         Me.chbReadNumberOfBytes.TabIndex = 20
         Me.chbReadNumberOfBytes.Text = "Read Number of Bytes"
         '
         'InstrumentControlForm
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(842, 479)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.ClientSize = New System.Drawing.Size(1763, 1093)
         Me.Controls.Add(Me.btnConvertBinary)
         Me.Controls.Add(Me.btnClearSentData)
         Me.Controls.Add(Me.tbSentData)
@@ -432,6 +409,8 @@ Public Class InstrumentControlForm
         Me.gbNotify.ResumeLayout(False)
         CType(Me.LoopTimer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 #End Region
 
@@ -453,7 +432,7 @@ Public Class InstrumentControlForm
         Me.cbNotifyStatusFlag.SelectedIndex = 0
     End Sub
 
-    Private Sub BtnConnectClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnConnectClick(sender As System.Object, e As System.EventArgs) Handles btnConnect.Click
         If Me.cbBoards.Items.Count > 0 Then
             Dim SelectedBoard As Boards = CType([Enum].Parse(GetType(Boards), Me.cbBoards.SelectedItem.ToString), Boards)
             Dim NewGPIBDevice As New Instrument(SelectedBoard, Convert.ToByte(Me.cbBusDevices.SelectedItem), False)
@@ -467,7 +446,7 @@ Public Class InstrumentControlForm
         End If
     End Sub
 
-    Private Sub BtnDisconnectClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnDisconnectClick(sender As System.Object, e As System.EventArgs) Handles btnDisconnect.Click
         Me.CurrentGPIBDevice.Dispose()
         Me.LoopTimer.Enabled = False
         Me.btnDisconnect.Enabled = False
@@ -477,15 +456,15 @@ Public Class InstrumentControlForm
         Me.btnSend.Enabled = False
     End Sub
 
-    Private Sub BtnSendClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnSendClick(sender As System.Object, e As System.EventArgs) Handles btnSend.Click
         Me.WriteToCurrentGPIBDevice()
     End Sub
 
-    Private Sub BtnReadClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnReadClick(sender As System.Object, e As System.EventArgs) Handles btnRead.Click
         Me.ReadDataFromCurrentInstrument()
     End Sub
 
-    Private Sub BtnQueryClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnQueryClick(sender As System.Object, e As System.EventArgs) Handles btnQuery.Click
         If Me.chkLoop.Checked Then
             Me.LoopTimer.Enabled = True
         Else
@@ -494,32 +473,32 @@ Public Class InstrumentControlForm
         End If
     End Sub
 
-    Private Sub BtnClearReceivedDataClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnClearReceivedDataClick(sender As System.Object, e As System.EventArgs) Handles btnClearReceivedData.Click
         Me.tbReceivedData.Clear()
     End Sub
 
-    Private Sub CbBoardsSelectedIndexChanged(sender As System.Object, e As System.EventArgs)
+    Private Sub CbBoardsSelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbBoards.SelectedIndexChanged
         Me.cbBusDevices.DataSource = GetGPIBBusAddresses(CType([Enum].Parse(GetType(Boards), Me.cbBoards.SelectedItem.ToString), Boards))
     End Sub
 
-    Private Sub BtnTriggerClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnTriggerClick(sender As System.Object, e As System.EventArgs) Handles btnTrigger.Click
         Me.CurrentGPIBDevice.Trigger()
     End Sub
 
-    Private Sub BtnStopLoopClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnStopLoopClick(sender As System.Object, e As System.EventArgs) Handles btnStopLoop.Click
         Me.LoopTimer.Enabled = False
     End Sub
 
-    Private Sub LoopTimerElapsed(sender As System.Object, e As System.Timers.ElapsedEventArgs)
+    Private Sub LoopTimerElapsed(sender As System.Object, e As System.Timers.ElapsedEventArgs) Handles LoopTimer.Elapsed
         Me.WriteToCurrentGPIBDevice()
         Me.ReadDataFromCurrentInstrument()
     End Sub
 
     Private Sub WriteToCurrentGPIBDevice()
-        Me.tbSentData.AppendText(Me.tbCommands.Text & NewLine)
+        Me.tbSentData.AppendText(Me.tbCommands.Text & ControlChars.NewLine)
         If Not RunFreeCalInNonGPIBMode Then
             If Me.cbInsertNewLineOnWrite.Checked Then
-                Me.CurrentGPIBDevice.Write(Me.tbCommands.Text & NewLine)
+                Me.CurrentGPIBDevice.Write(Me.tbCommands.Text & ControlChars.NewLine)
             Else
                 Me.CurrentGPIBDevice.Write(Me.tbCommands.Text)
             End If
@@ -531,14 +510,14 @@ Public Class InstrumentControlForm
             Select Case CType([Enum].Parse(GetType(InstrumentDataTypeEnum), Me.cbReadDataType.SelectedItem.ToString), InstrumentDataTypeEnum)
                 Case InstrumentDataTypeEnum.String
                     If Me.chbReadNumberOfBytes.Checked Then
-                        Me.tbReceivedData.AppendText(Me.CurrentGPIBDevice.ReadString(Convert.ToInt32(Me.tbReadNumberOfBytes.Text)) & NewLine)
+                        Me.tbReceivedData.AppendText(Me.CurrentGPIBDevice.ReadString(Convert.ToInt32(Me.tbReadNumberOfBytes.Text)) & ControlChars.NewLine)
                     Else
-                        Me.tbReceivedData.AppendText(Me.CurrentGPIBDevice.ReadString & NewLine)
+                        Me.tbReceivedData.AppendText(Me.CurrentGPIBDevice.ReadString & ControlChars.NewLine)
                     End If
                 Case InstrumentDataTypeEnum.Single
-                    Me.tbReceivedData.AppendText(Me.CurrentGPIBDevice.ReadDouble & NewLine)
+                    Me.tbReceivedData.AppendText(Me.CurrentGPIBDevice.ReadDouble & ControlChars.NewLine)
                 Case InstrumentDataTypeEnum.Double
-                    Me.tbReceivedData.AppendText(Me.CurrentGPIBDevice.ReadDouble & NewLine)
+                    Me.tbReceivedData.AppendText(Me.CurrentGPIBDevice.ReadDouble & ControlChars.NewLine)
                 Case InstrumentDataTypeEnum.Binary
                     Dim Bytes() As Byte
                     If Me.chbReadNumberOfBytes.Checked Then
@@ -549,14 +528,14 @@ Public Class InstrumentControlForm
                     For Each B As Byte In Bytes
                         Me.tbReceivedData.AppendText(B & Space(1))
                     Next
-                    Me.tbReceivedData.AppendText(NewLine)
+                    Me.tbReceivedData.AppendText(ControlChars.NewLine)
             End Select
         Else
-            Me.tbReceivedData.AppendText(Me.tbCommands.Text & " - FreeCal is running in Non-GPIB mode, connect a GPIB board for proper operation." & NewLine)
+            Me.tbReceivedData.AppendText(Me.tbCommands.Text & " - FreeCal is running in Non-GPIB mode, connect a GPIB board for proper operation." & ControlChars.NewLine)
         End If
     End Sub
 
-    Private Sub BtnNotifyClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnNotifyClick(sender As System.Object, e As System.EventArgs) Handles btnNotify.Click
         Try
             If Me.btnNotify.Text = "Start Notify" Then
                 Me.btnNotify.Text = "Stop Notify"
@@ -570,8 +549,8 @@ Public Class InstrumentControlForm
     End Sub
 
     Private Sub NotifyCallBack(ByVal sender As Object, ByVal userData As NotifyData)
-        Me.tbReceivedData.AppendText(NewLine & "*** GPIB Notify Status Returned ***" & NewLine & userData.ToString)
-        Me.tbReceivedData.AppendText(NewLine & Me.CurrentGPIBDevice.SerialPoll)
+        Me.tbReceivedData.AppendText(ControlChars.NewLine & "*** GPIB Notify Status Returned ***" & ControlChars.NewLine & userData.ToString)
+        Me.tbReceivedData.AppendText(ControlChars.NewLine & Me.CurrentGPIBDevice.SerialPoll)
         If (Me.btnNotify.Text = "Stop Notify" And Me.chkLoopNotify.Checked) Then
             userData.SetReenableMask(CType([Enum].Parse(GetType(GpibStatusFlags), Me.cbNotifyStatusFlag.SelectedItem.ToString), GpibStatusFlags))
         Else
@@ -579,15 +558,15 @@ Public Class InstrumentControlForm
         End If
     End Sub
 
-    Private Sub CbNotifyStatusFlagKeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs)
+    Private Sub CbNotifyStatusFlagKeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles cbNotifyStatusFlag.KeyPress
         e.Handled = True
     End Sub
 
-    Private Sub BtnClearSentDataClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnClearSentDataClick(sender As System.Object, e As System.EventArgs) Handles btnClearSentData.Click
         Me.tbSentData.Clear()
     End Sub
 
-    Private Sub BtnConvertBinaryClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnConvertBinaryClick(sender As System.Object, e As System.EventArgs) Handles btnConvertBinary.Click
         Dim StringData() As String = Me.tbReceivedData.SelectedText.Split(" "c)
         Dim Bytes(StringData.GetUpperBound(0)) As Byte
         Try
@@ -598,7 +577,7 @@ Public Class InstrumentControlForm
             MessageBox.Show(Ex.Message)
         End Try
         Try
-            Me.tbReceivedData.AppendText(NewLine & NewLine & "*** Converted " & Me.tbReceivedData.SelectedText & " to " & Me.cbReadDataType.SelectedItem.ToString & " ***" & NewLine)
+            Me.tbReceivedData.AppendText(ControlChars.NewLine & ControlChars.NewLine & "*** Converted " & Me.tbReceivedData.SelectedText & " to " & Me.cbReadDataType.SelectedItem.ToString & " ***" & ControlChars.NewLine)
             Select Case CType([Enum].Parse(GetType(InstrumentDataTypeEnum), Me.cbReadDataType.SelectedItem.ToString), InstrumentDataTypeEnum)
                 Case InstrumentDataTypeEnum.Int16
                     Me.tbReceivedData.AppendText(BitConverter.ToInt16(Bytes, 0) & Space(1))

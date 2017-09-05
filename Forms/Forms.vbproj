@@ -187,6 +187,9 @@
     <Compile Include="WorkForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="InstrumentControlForm.resx">
+      <DependentUpon>InstrumentControlForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
