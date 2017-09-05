@@ -226,7 +226,7 @@ Public Class CounterProcedureStandardsForm
 #End Region
 
     Public Sub FillComboBoxes()
-        Dim SignalGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "\Microwave.SignalGenerators.dll")
+        Dim SignalGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "SignalGenerators.dll")
         For Each Res As [Type] In SignalGeneratorAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "SignalGenerator" Then
@@ -237,7 +237,7 @@ Public Class CounterProcedureStandardsForm
             End Try
         Next
         SignalGeneratorAssembly = Nothing
-        Dim PowerMeterAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "\Microwave.PowerMeters.dll")
+        Dim PowerMeterAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "PowerMeters.dll")
         For Each Res As [Type] In PowerMeterAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "TwoChannelPowerMeter" Then
@@ -247,7 +247,7 @@ Public Class CounterProcedureStandardsForm
                 MessageBox.Show(Ex.ToString)
             End Try
         Next
-        Dim FunctionGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "\GeneralPurpose.FunctionGenerators.dll")
+        Dim FunctionGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "FunctionGenerators.dll")
         For Each Res As [Type] In FunctionGeneratorAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "FunctionGenerator" Then
@@ -258,7 +258,7 @@ Public Class CounterProcedureStandardsForm
             End Try
         Next
         FunctionGeneratorAssembly = Nothing
-        Dim CounterAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "\Microwave.Counters.dll")
+        Dim CounterAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "Counters.dll")
         For Each Res As [Type] In CounterAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "Counter" Then

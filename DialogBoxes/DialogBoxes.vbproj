@@ -32,7 +32,7 @@
     <ProjectGuid>{CBD2C19E-2326-4FDB-8DF2-6CA76B2EF35B}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Program\Debug\</OutputPath>
     <DocumentationFile>FreeCal.DialogBoxes.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />

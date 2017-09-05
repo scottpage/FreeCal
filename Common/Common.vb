@@ -428,11 +428,11 @@ End Enum
 #End Region
 
 Public Module Directories
-    Public MainDirectory As String = Path.Combine(GetFolderPath(SpecialFolder.CommonApplicationData), "FreeCal")
-    Public ProgramDirectory As String = Path.Combine(MainDirectory, "Program")
-    Public ResourceDirectory As String = Path.Combine(ProgramDirectory, "Resources")
-    Public EEPROMDataDirectory As String = Path.Combine(MainDirectory, "EEPROM Data")
-    Public LogDirectory As String = Path.Combine(ProgramDirectory, "Log Files")
+    Public MainDirectory As String = My.Application.Info.DirectoryPath
+    Public ProgramDirectory As String = MainDirectory
+    Public ResourceDirectory As String = MainDirectory
+    Public EEPROMDataDirectory As String = MainDirectory
+    Public LogDirectory As String = MainDirectory
 
     Public Sub CreateDirectories()
         Try

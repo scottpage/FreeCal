@@ -160,7 +160,7 @@ Public Class EditorForm
         Me.cbAddress.SelectedIndex = 0
         Dim FCResources As String = ResourceDirectory & "\FreeCal.Instruments."
         'Dim FCResources As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\FreeCalVS\Program\Resources\FreeCal.Instruments."
-        Dim SignalGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(FCResources & "Microwave.SignalGenerators.dll")
+        Dim SignalGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(FCResources & "SignalGenerators.dll")
         For Each Res As [Type] In SignalGeneratorAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "SignalGenerator" Then
@@ -171,7 +171,7 @@ Public Class EditorForm
             End Try
         Next
         SignalGeneratorAssembly = Nothing
-        Dim NetworkAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(FCResources & "Microwave.NetworkAnalyzers.dll")
+        Dim NetworkAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(FCResources & "NetworkAnalyzers.dll")
         For Each Res As [Type] In NetworkAnalyzerAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "NetworkAnalyzer" Then
@@ -182,7 +182,7 @@ Public Class EditorForm
             End Try
         Next
         NetworkAnalyzerAssembly = Nothing
-        Dim PowerMeterAssembly As [Assembly] = [Assembly].LoadFrom(FCResources & "Microwave.PowerMeters.dll")
+        Dim PowerMeterAssembly As [Assembly] = [Assembly].LoadFrom(FCResources & "PowerMeters.dll")
         For Each Res As [Type] In PowerMeterAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "PowerMeter" Then
@@ -193,7 +193,7 @@ Public Class EditorForm
             End Try
         Next
         PowerMeterAssembly = Nothing
-        Dim SpectrumAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(FCResources & "Microwave.SpectrumAnalyzers.dll")
+        Dim SpectrumAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(FCResources & "SpectrumAnalyzers.dll")
         For Each Res As [Type] In SpectrumAnalyzerAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "SpectrumAnalyzer" Then

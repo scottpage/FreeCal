@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,25 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="mmFreeCal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAICAEAAAAAADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
-        AAD///8AAAAAAAAAAAALu7u7u7u7uwAAd3d3cAAAC7u7u7u7u7sAAHd3d3AAAAu7u7u7u7u7AAB3d3dw
-        AAALu7u7u7u7uwCZmZl3cAAAC7u7u7u7u7sAmZmZd3AAAAu7u7u7u7u7AJmZmXdwAAALu7u3dwAAAACZ
-        mZl3cAAAC7u7t3cAAAAAmZmZd3AAAAu7u7d3AAAAAJmZmXdwAAALu7u3dwAAAACZmZl3d3d3d7u7t3cA
-        AAAAmZmZd3d3d3e7u7d3AAAAAJmZmXd3d3d3u7u3d3d3AACZmZmZmZmZmZm7t3d3dwAAmZmZmZmZmZmZ
-        u7d3d3cAAJmZmZmZmZmZmbu7u7u7uwCZmZmZmZmZmZm7u7u7u7sAmZmZmZmZmZmZu7u7u7u7AJmZmZmZ
-        mZmZmbu7u7u7uwCZmZl3cAAAC7u7u7u7u7sAmZmZd3AAAAu7u7u7u7u7AJmZmXd3d3d3d3d3AAAAAACZ
-        mZl3d3d3d3d3dwAAAAAAmZmZd3d3d3d3d3cAAAAAAJmZmZmZmZmZmZl3AAAAAACZmZmZmZmZmZmZdwAA
-        AAAAmZmZmZmZmZmZmXcAAAAAAJmZmZmZmZmZmZl3AAAAAACZmZmZmZmZmZmZAAAAAAAAmZmZmZmZmZmZ
-        mQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//4AA8B+AAPAfgADwH4AAwB+AAMAf
-        gADAH4A/wB+AP8AfgD/AH4A/wAAAP8AAAD/AAAADwAAAA8AAAAPAAAAAwAAAAMAAAADAAAAAwB+AAMAf
-        gADAAAD/wAAA/8AAAP/AAAD/wAAA/8AAAP/AAAD/wAAD/8AAA////////////w==
-</value>
-  </data>
 </root>

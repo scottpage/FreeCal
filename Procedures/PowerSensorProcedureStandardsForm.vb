@@ -311,7 +311,7 @@ Public Class PowerSensorProcedureStandardsForm
 #End Region
 
     Public Sub FillComboBoxes()
-        Dim SignalGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "Microwave.SignalGenerators.dll")
+        Dim SignalGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "SignalGenerators.dll")
         For Each Res As [Type] In SignalGeneratorAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "SignalGenerator" Then
@@ -322,7 +322,7 @@ Public Class PowerSensorProcedureStandardsForm
             End Try
         Next
         SignalGeneratorAssembly = Nothing
-        Dim PowerMeterAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "Microwave.PowerMeters.dll")
+        Dim PowerMeterAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "PowerMeters.dll")
         For Each Res As [Type] In PowerMeterAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "PowerMeter" Then
@@ -334,7 +334,7 @@ Public Class PowerSensorProcedureStandardsForm
             End Try
         Next
         PowerMeterAssembly = Nothing
-        Dim NetworkAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "Microwave.NetworkAnalyzers.dll")
+        Dim NetworkAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "NetworkAnalyzers.dll")
         For Each Res As [Type] In NetworkAnalyzerAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "NetworkAnalyzer" Then
@@ -345,7 +345,7 @@ Public Class PowerSensorProcedureStandardsForm
             End Try
         Next
         NetworkAnalyzerAssembly = Nothing
-        Dim FunctionGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "GeneralPurpose.FunctionGenerators.dll")
+        Dim FunctionGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "FunctionGenerators.dll")
         For Each Res As [Type] In FunctionGeneratorAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "FunctionGenerator" Then
@@ -356,7 +356,7 @@ Public Class PowerSensorProcedureStandardsForm
             End Try
         Next
         FunctionGeneratorAssembly = Nothing
-        Dim AttenuatorSwitchDriverAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "Microwave.AttenuatorSwitchDrivers.dll")
+        Dim AttenuatorSwitchDriverAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "AttenuatorSwitchDrivers.dll")
         For Each Res As [Type] In AttenuatorSwitchDriverAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "AttenuatorSwitchDriver" Then

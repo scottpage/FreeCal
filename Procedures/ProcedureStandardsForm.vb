@@ -17,7 +17,7 @@ Imports FreeCal.Instruments.SignalGenerators
 
 Public Class ProcedureStandardsForm
     Inherits System.Windows.Forms.Form
-    Private FCResources As String = "FreeCal.Instruments."
+    Private FCResources As String = ResourceDirectory & "\FreeCal.Instruments."
     Private label3 As System.Windows.Forms.Label
     Private label2 As System.Windows.Forms.Label
     Private label1 As System.Windows.Forms.Label
@@ -214,7 +214,7 @@ Public Class ProcedureStandardsForm
 #End Region
 
     Public Sub FillComboBoxes()
-        Dim SignalGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "Microwave.SignalGenerators.dll")
+        Dim SignalGeneratorAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "SignalGenerators.dll")
         For Each Res As [Type] In SignalGeneratorAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "SignalGenerator" Then
@@ -226,7 +226,7 @@ Public Class ProcedureStandardsForm
             End Try
         Next
         SignalGeneratorAssembly = Nothing
-        Dim PowerMeterAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "Microwave.PowerMeters.dll")
+        Dim PowerMeterAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "PowerMeters.dll")
         For Each Res As [Type] In PowerMeterAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "PowerMeter" Then
@@ -237,7 +237,7 @@ Public Class ProcedureStandardsForm
             End Try
         Next
         PowerMeterAssembly = Nothing
-        Dim MeasuringReceiverAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "Microwave.MeasuringReceivers.dll")
+        Dim MeasuringReceiverAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "MeasuringReceivers.dll")
         For Each Res As [Type] In MeasuringReceiverAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "MeasuringReceiver" Then
@@ -248,7 +248,7 @@ Public Class ProcedureStandardsForm
             End Try
         Next
         MeasuringReceiverAssembly = Nothing
-        Dim SpectrumAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "Microwave.SpectrumAnalyzers.dll")
+        Dim SpectrumAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "SpectrumAnalyzers.dll")
         For Each Res As [Type] In SpectrumAnalyzerAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "SpectrumAnalyzer" Then
@@ -259,7 +259,7 @@ Public Class ProcedureStandardsForm
             End Try
         Next
         SpectrumAnalyzerAssembly = Nothing
-        Dim AudioAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "GeneralPurpose.AudioAnalyzers.dll")
+        Dim AudioAnalyzerAssembly As [Assembly] = [Assembly].LoadFrom(Me.FCResources & "AudioAnalyzers.dll")
         For Each Res As [Type] In AudioAnalyzerAssembly.GetTypes
             Try
                 If Res.BaseType.Name = "AudioAnalyzer" Then

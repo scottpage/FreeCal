@@ -32,7 +32,7 @@
     <ProjectGuid>{7AEEAADE-C420-4B22-9C2D-30702AC6CE7E}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Program\Debug\</OutputPath>
     <DocumentationFile>FreeCal.NonGPIBInstruments.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />

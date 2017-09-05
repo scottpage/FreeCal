@@ -20,23 +20,24 @@ Imports FreeCal.Instruments.PowerMeters
 
 Public Class AgilentE4417AEEPROMForm
     Inherits System.Windows.Forms.Form
+
     Private ESeriesPowerMeter As AgilentE4417A
     Private ModelNumber As String
     Private SerialNumber As String
     Private Manufacturer As String
-    Private chkboxAllowUpload As System.Windows.Forms.CheckBox
-    Private btnUpLoad As System.Windows.Forms.Button
-    Private lblOptions As System.Windows.Forms.Label
-    Private btnFindMeters As System.Windows.Forms.Button
-    Private lblModel As System.Windows.Forms.Label
-    Private lblNumberOfPoints As System.Windows.Forms.Label
-    Private dgCalibrationFactors As System.Windows.Forms.DataGrid
-    Private lblManufacturer As System.Windows.Forms.Label
-    Private lblSerialNumber As System.Windows.Forms.Label
-    Private dgBytes As System.Windows.Forms.DataGrid
-    Private cboPowerMeters As System.Windows.Forms.ComboBox
-    Private lblCurrentPowerMeter As System.Windows.Forms.Label
-    Private btnDownload As System.Windows.Forms.Button
+    Private WithEvents chkboxAllowUpload As System.Windows.Forms.CheckBox
+    Private WithEvents btnUpLoad As System.Windows.Forms.Button
+    Private WithEvents lblOptions As System.Windows.Forms.Label
+    Private WithEvents btnFindMeters As System.Windows.Forms.Button
+    Private WithEvents lblModel As System.Windows.Forms.Label
+    Private WithEvents lblNumberOfPoints As System.Windows.Forms.Label
+    Private WithEvents dgCalibrationFactors As System.Windows.Forms.DataGrid
+    Private WithEvents lblManufacturer As System.Windows.Forms.Label
+    Private WithEvents lblSerialNumber As System.Windows.Forms.Label
+    Private WithEvents dgBytes As System.Windows.Forms.DataGrid
+    Private WithEvents cboPowerMeters As System.Windows.Forms.ComboBox
+    Private WithEvents lblCurrentPowerMeter As System.Windows.Forms.Label
+    Private WithEvents btnDownload As System.Windows.Forms.Button
 
     Public Shared Sub Main()
         Dim NewAgilentE4417AEEPROMForm As New AgilentE4417AEEPROMForm
@@ -71,19 +72,19 @@ Public Class AgilentE4417AEEPROMForm
     ' Do not change the method contents inside the source code editor. The Forms designer might
     ' not be able to load this method if it was changed manually.
     Private Sub InitializeComponent()
-        Me.btnDownload = New System.Windows.Forms.Button
-        Me.lblCurrentPowerMeter = New System.Windows.Forms.Label
-        Me.cboPowerMeters = New System.Windows.Forms.ComboBox
-        Me.dgBytes = New System.Windows.Forms.DataGrid
-        Me.lblSerialNumber = New System.Windows.Forms.Label
-        Me.lblManufacturer = New System.Windows.Forms.Label
-        Me.dgCalibrationFactors = New System.Windows.Forms.DataGrid
-        Me.lblNumberOfPoints = New System.Windows.Forms.Label
-        Me.lblModel = New System.Windows.Forms.Label
-        Me.btnFindMeters = New System.Windows.Forms.Button
-        Me.lblOptions = New System.Windows.Forms.Label
-        Me.btnUpLoad = New System.Windows.Forms.Button
-        Me.chkboxAllowUpload = New System.Windows.Forms.CheckBox
+        Me.btnDownload = New System.Windows.Forms.Button()
+        Me.lblCurrentPowerMeter = New System.Windows.Forms.Label()
+        Me.cboPowerMeters = New System.Windows.Forms.ComboBox()
+        Me.dgBytes = New System.Windows.Forms.DataGrid()
+        Me.lblSerialNumber = New System.Windows.Forms.Label()
+        Me.lblManufacturer = New System.Windows.Forms.Label()
+        Me.dgCalibrationFactors = New System.Windows.Forms.DataGrid()
+        Me.lblNumberOfPoints = New System.Windows.Forms.Label()
+        Me.lblModel = New System.Windows.Forms.Label()
+        Me.btnFindMeters = New System.Windows.Forms.Button()
+        Me.lblOptions = New System.Windows.Forms.Label()
+        Me.btnUpLoad = New System.Windows.Forms.Button()
+        Me.chkboxAllowUpload = New System.Windows.Forms.CheckBox()
         CType(Me.dgBytes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgCalibrationFactors, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -91,41 +92,40 @@ Public Class AgilentE4417AEEPROMForm
         'btnDownload
         '
         Me.btnDownload.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnDownload.Location = New System.Drawing.Point(640, 488)
+        Me.btnDownload.Location = New System.Drawing.Point(1280, 901)
         Me.btnDownload.Name = "btnDownload"
-        Me.btnDownload.Size = New System.Drawing.Size(80, 23)
+        Me.btnDownload.Size = New System.Drawing.Size(160, 42)
         Me.btnDownload.TabIndex = 1
         Me.btnDownload.Text = "Download"
-        AddHandler Me.btnDownload.Click, AddressOf Me.btnDownloadClick
         '
         'lblCurrentPowerMeter
         '
         Me.lblCurrentPowerMeter.AutoSize = True
         Me.lblCurrentPowerMeter.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.lblCurrentPowerMeter.Location = New System.Drawing.Point(416, 472)
+        Me.lblCurrentPowerMeter.Location = New System.Drawing.Point(832, 871)
         Me.lblCurrentPowerMeter.Name = "lblCurrentPowerMeter"
-        Me.lblCurrentPowerMeter.Size = New System.Drawing.Size(123, 17)
+        Me.lblCurrentPowerMeter.Size = New System.Drawing.Size(125, 13)
         Me.lblCurrentPowerMeter.TabIndex = 12
         Me.lblCurrentPowerMeter.Text = "Current Power Meter"
         '
         'cboPowerMeters
         '
         Me.cboPowerMeters.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cboPowerMeters.Location = New System.Drawing.Point(352, 488)
+        Me.cboPowerMeters.Location = New System.Drawing.Point(704, 901)
         Me.cboPowerMeters.Name = "cboPowerMeters"
-        Me.cboPowerMeters.Size = New System.Drawing.Size(240, 21)
+        Me.cboPowerMeters.Size = New System.Drawing.Size(480, 33)
         Me.cboPowerMeters.TabIndex = 11
         '
         'dgBytes
         '
         Me.dgBytes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgBytes.DataMember = ""
         Me.dgBytes.HeaderForeColor = System.Drawing.SystemColors.ControlText
-        Me.dgBytes.Location = New System.Drawing.Point(600, 32)
+        Me.dgBytes.Location = New System.Drawing.Point(1268, 59)
         Me.dgBytes.Name = "dgBytes"
         Me.dgBytes.RowHeadersVisible = False
-        Me.dgBytes.Size = New System.Drawing.Size(200, 416)
+        Me.dgBytes.Size = New System.Drawing.Size(400, 768)
         Me.dgBytes.TabIndex = 10
         '
         'lblSerialNumber
@@ -133,9 +133,9 @@ Public Class AgilentE4417AEEPROMForm
         Me.lblSerialNumber.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblSerialNumber.AutoSize = True
         Me.lblSerialNumber.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.lblSerialNumber.Location = New System.Drawing.Point(8, 480)
+        Me.lblSerialNumber.Location = New System.Drawing.Point(16, 886)
         Me.lblSerialNumber.Name = "lblSerialNumber"
-        Me.lblSerialNumber.Size = New System.Drawing.Size(96, 17)
+        Me.lblSerialNumber.Size = New System.Drawing.Size(95, 13)
         Me.lblSerialNumber.TabIndex = 6
         Me.lblSerialNumber.Text = "Serial Number:  "
         '
@@ -143,9 +143,9 @@ Public Class AgilentE4417AEEPROMForm
         '
         Me.lblManufacturer.AutoSize = True
         Me.lblManufacturer.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.lblManufacturer.Location = New System.Drawing.Point(8, 448)
+        Me.lblManufacturer.Location = New System.Drawing.Point(16, 827)
         Me.lblManufacturer.Name = "lblManufacturer"
-        Me.lblManufacturer.Size = New System.Drawing.Size(92, 17)
+        Me.lblManufacturer.Size = New System.Drawing.Size(93, 13)
         Me.lblManufacturer.TabIndex = 13
         Me.lblManufacturer.Text = "Manufacturer:  "
         '
@@ -153,24 +153,24 @@ Public Class AgilentE4417AEEPROMForm
         '
         Me.dgCalibrationFactors.AllowSorting = False
         Me.dgCalibrationFactors.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgCalibrationFactors.DataMember = ""
         Me.dgCalibrationFactors.HeaderForeColor = System.Drawing.SystemColors.ControlText
-        Me.dgCalibrationFactors.Location = New System.Drawing.Point(8, 32)
+        Me.dgCalibrationFactors.Location = New System.Drawing.Point(16, 59)
         Me.dgCalibrationFactors.Name = "dgCalibrationFactors"
         Me.dgCalibrationFactors.PreferredColumnWidth = 100
         Me.dgCalibrationFactors.RowHeadersVisible = False
-        Me.dgCalibrationFactors.Size = New System.Drawing.Size(584, 416)
+        Me.dgCalibrationFactors.Size = New System.Drawing.Size(1236, 768)
         Me.dgCalibrationFactors.TabIndex = 2
         '
         'lblNumberOfPoints
         '
         Me.lblNumberOfPoints.AutoSize = True
         Me.lblNumberOfPoints.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.lblNumberOfPoints.Location = New System.Drawing.Point(8, 16)
+        Me.lblNumberOfPoints.Location = New System.Drawing.Point(16, 30)
         Me.lblNumberOfPoints.Name = "lblNumberOfPoints"
-        Me.lblNumberOfPoints.Size = New System.Drawing.Size(114, 17)
+        Me.lblNumberOfPoints.Size = New System.Drawing.Size(112, 13)
         Me.lblNumberOfPoints.TabIndex = 3
         Me.lblNumberOfPoints.Text = "Number of Points:  "
         '
@@ -179,28 +179,28 @@ Public Class AgilentE4417AEEPROMForm
         Me.lblModel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblModel.AutoSize = True
         Me.lblModel.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.lblModel.Location = New System.Drawing.Point(8, 464)
+        Me.lblModel.Location = New System.Drawing.Point(16, 857)
         Me.lblModel.Name = "lblModel"
-        Me.lblModel.Size = New System.Drawing.Size(49, 17)
+        Me.lblModel.Size = New System.Drawing.Size(50, 13)
         Me.lblModel.TabIndex = 5
         Me.lblModel.Text = "Model:  "
         '
         'btnFindMeters
         '
-        Me.btnFindMeters.Location = New System.Drawing.Point(688, 456)
+        Me.btnFindMeters.Location = New System.Drawing.Point(1376, 842)
         Me.btnFindMeters.Name = "btnFindMeters"
+        Me.btnFindMeters.Size = New System.Drawing.Size(150, 42)
         Me.btnFindMeters.TabIndex = 14
         Me.btnFindMeters.Text = "Find Meters"
-        AddHandler Me.btnFindMeters.Click, AddressOf Me.BtnFindMetersClick
         '
         'lblOptions
         '
         Me.lblOptions.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblOptions.AutoSize = True
         Me.lblOptions.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.lblOptions.Location = New System.Drawing.Point(8, 496)
+        Me.lblOptions.Location = New System.Drawing.Point(16, 916)
         Me.lblOptions.Name = "lblOptions"
-        Me.lblOptions.Size = New System.Drawing.Size(59, 17)
+        Me.lblOptions.Size = New System.Drawing.Size(59, 13)
         Me.lblOptions.TabIndex = 8
         Me.lblOptions.Text = "Options:  "
         '
@@ -208,26 +208,25 @@ Public Class AgilentE4417AEEPROMForm
         '
         Me.btnUpLoad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnUpLoad.Enabled = False
-        Me.btnUpLoad.Location = New System.Drawing.Point(728, 488)
+        Me.btnUpLoad.Location = New System.Drawing.Point(1456, 901)
         Me.btnUpLoad.Name = "btnUpLoad"
+        Me.btnUpLoad.Size = New System.Drawing.Size(150, 42)
         Me.btnUpLoad.TabIndex = 4
         Me.btnUpLoad.Text = "Upload"
-        AddHandler Me.btnUpLoad.Click, AddressOf Me.BtnUpLoadClick
         '
         'chkboxAllowUpload
         '
         Me.chkboxAllowUpload.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.chkboxAllowUpload.Location = New System.Drawing.Point(712, 8)
+        Me.chkboxAllowUpload.Location = New System.Drawing.Point(1424, 15)
         Me.chkboxAllowUpload.Name = "chkboxAllowUpload"
-        Me.chkboxAllowUpload.Size = New System.Drawing.Size(88, 24)
+        Me.chkboxAllowUpload.Size = New System.Drawing.Size(176, 44)
         Me.chkboxAllowUpload.TabIndex = 9
         Me.chkboxAllowUpload.Text = "Allow Upload"
-        AddHandler Me.chkboxAllowUpload.CheckedChanged, AddressOf Me.ChkboxAllowUploadCheckedChanged
         '
-        'EEPROMPowerSensorManipluatorForm
+        'AgilentE4417AEEPROMForm
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(808, 517)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.ClientSize = New System.Drawing.Size(1684, 954)
         Me.Controls.Add(Me.btnFindMeters)
         Me.Controls.Add(Me.lblManufacturer)
         Me.Controls.Add(Me.cboPowerMeters)
@@ -241,12 +240,13 @@ Public Class AgilentE4417AEEPROMForm
         Me.Controls.Add(Me.chkboxAllowUpload)
         Me.Controls.Add(Me.lblCurrentPowerMeter)
         Me.Controls.Add(Me.lblNumberOfPoints)
-        Me.Name = "EEPROMPowerSensorManipluatorForm"
+        Me.Name = "AgilentE4417AEEPROMForm"
         Me.Text = "EEPROM Power Sensor Manupulator"
-        AddHandler Closing, AddressOf Me.EEPROMPowerSensorManipluatorFormClosing
         CType(Me.dgBytes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgCalibrationFactors, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 #End Region
 
@@ -291,7 +291,7 @@ Public Class AgilentE4417AEEPROMForm
         End Try
     End Sub
 
-    Private Sub btnDownloadClick(sender As System.Object, e As System.EventArgs)
+    Private Sub btnDownloadClick(sender As System.Object, e As System.EventArgs) Handles btnDownload.Click
         Me.ESeriesPowerMeter = New AgilentE4417A(0, Convert.ToByte(Me.cboPowerMeters.Text.Substring(Me.cboPowerMeters.Text.LastIndexOf(", ")).Replace(", ", "").Trim), False)
         Me.ESeriesPowerMeter.DownloadPowerSensorEEPROM()
         Me.lblModel.Text = Me.ESeriesPowerMeter.PowerSensorModelNumber
@@ -300,11 +300,11 @@ Public Class AgilentE4417AEEPROMForm
         Me.dgCalibrationFactors.DataSource = Me.ESeriesPowerMeter.dtCalibrationFactors
     End Sub
 
-    Private Sub BtnUpLoadClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnUpLoadClick(sender As System.Object, e As System.EventArgs) Handles btnUpLoad.Click
         Me.ESeriesPowerMeter.UploadPowerSensorEEPROM()
     End Sub
 
-    Private Sub EEPROMPowerSensorManipluatorFormClosing(sender As System.Object, e As System.ComponentModel.CancelEventArgs)
+    Private Sub EEPROMPowerSensorManipluatorFormClosing(sender As System.Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
         If (Not Me.ESeriesPowerMeter Is Nothing) Then
             Me.ESeriesPowerMeter.Dispose()
         End If
@@ -320,7 +320,7 @@ Public Class AgilentE4417AEEPROMForm
         End If
     End Sub
 
-    Private Sub ChkboxAllowUploadCheckedChanged(sender As System.Object, e As System.EventArgs)
+    Private Sub ChkboxAllowUploadCheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkboxAllowUpload.CheckedChanged
         If Me.ESeriesPowerMeter.dtCalibrationFactors.Rows.Count > 0 Then
             Me.btnUpLoad.Enabled = Me.chkboxAllowUpload.Checked
         Else
@@ -329,7 +329,7 @@ Public Class AgilentE4417AEEPROMForm
         End If
     End Sub
 
-    Private Sub BtnFindMetersClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnFindMetersClick(sender As System.Object, e As System.EventArgs) Handles btnFindMeters.Click
         Me.DetectMeters()
     End Sub
 

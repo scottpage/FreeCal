@@ -17,15 +17,16 @@ Imports Microsoft.VisualBasic.ControlChars
 
 Public Class AgilentE4417ATableEditorForm
     Inherits System.Windows.Forms.Form
-    Private btnClearAllTables As System.Windows.Forms.Button
-    Private tbNewTableName As System.Windows.Forms.TextBox
-    Private dgData As System.Windows.Forms.DataGrid
-    Private tbReferenceCF As System.Windows.Forms.TextBox
-    Private btnRename As System.Windows.Forms.Button
-    Private btnUpload As System.Windows.Forms.Button
-    Private lstbTables As System.Windows.Forms.ListBox
-    Private btnNewTable As System.Windows.Forms.Button
-    Private btnDownload As System.Windows.Forms.Button
+
+    Private WithEvents btnClearAllTables As System.Windows.Forms.Button
+    Private WithEvents tbNewTableName As System.Windows.Forms.TextBox
+    Private WithEvents dgData As System.Windows.Forms.DataGrid
+    Private WithEvents tbReferenceCF As System.Windows.Forms.TextBox
+    Private WithEvents btnRename As System.Windows.Forms.Button
+    Private WithEvents btnUpload As System.Windows.Forms.Button
+    Private WithEvents lstbTables As System.Windows.Forms.ListBox
+    Private WithEvents btnNewTable As System.Windows.Forms.Button
+    Private WithEvents btnDownload As System.Windows.Forms.Button
 
     Private PwrMtr As AgilentE4417A
 
@@ -45,103 +46,101 @@ Public Class AgilentE4417ATableEditorForm
     ' Do not change the method contents inside the source code editor. The Forms designer might
     ' not be able to load this method if it was changed manually.
     Private Sub InitializeComponent()
-        Me.btnDownload = New System.Windows.Forms.Button
-        Me.btnNewTable = New System.Windows.Forms.Button
-        Me.lstbTables = New System.Windows.Forms.ListBox
-        Me.btnUpload = New System.Windows.Forms.Button
-        Me.btnRename = New System.Windows.Forms.Button
-        Me.tbReferenceCF = New System.Windows.Forms.TextBox
-        Me.dgData = New System.Windows.Forms.DataGrid
-        Me.tbNewTableName = New System.Windows.Forms.TextBox
-        Me.btnClearAllTables = New System.Windows.Forms.Button
+        Me.btnDownload = New System.Windows.Forms.Button()
+        Me.btnNewTable = New System.Windows.Forms.Button()
+        Me.lstbTables = New System.Windows.Forms.ListBox()
+        Me.btnUpload = New System.Windows.Forms.Button()
+        Me.btnRename = New System.Windows.Forms.Button()
+        Me.tbReferenceCF = New System.Windows.Forms.TextBox()
+        Me.dgData = New System.Windows.Forms.DataGrid()
+        Me.tbNewTableName = New System.Windows.Forms.TextBox()
+        Me.btnClearAllTables = New System.Windows.Forms.Button()
         CType(Me.dgData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnDownload
         '
-        Me.btnDownload.Location = New System.Drawing.Point(400, 8)
+        Me.btnDownload.Location = New System.Drawing.Point(800, 15)
         Me.btnDownload.Name = "btnDownload"
+        Me.btnDownload.Size = New System.Drawing.Size(150, 42)
         Me.btnDownload.TabIndex = 1
         Me.btnDownload.Text = "Download"
-        AddHandler Me.btnDownload.Click, AddressOf Me.BtnDownloadClick
         '
         'btnNewTable
         '
-        Me.btnNewTable.Location = New System.Drawing.Point(640, 112)
+        Me.btnNewTable.Location = New System.Drawing.Point(1280, 207)
         Me.btnNewTable.Name = "btnNewTable"
+        Me.btnNewTable.Size = New System.Drawing.Size(150, 42)
         Me.btnNewTable.TabIndex = 8
         Me.btnNewTable.Text = "New Table"
-        AddHandler Me.btnNewTable.Click, AddressOf Me.BtnNewTableClick
         '
         'lstbTables
         '
         Me.lstbTables.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lstbTables.Location = New System.Drawing.Point(480, 0)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lstbTables.ItemHeight = 25
+        Me.lstbTables.Location = New System.Drawing.Point(960, 0)
         Me.lstbTables.Name = "lstbTables"
-        Me.lstbTables.Size = New System.Drawing.Size(128, 446)
+        Me.lstbTables.Size = New System.Drawing.Size(254, 1029)
         Me.lstbTables.TabIndex = 3
         '
         'btnUpload
         '
-        Me.btnUpload.Location = New System.Drawing.Point(400, 40)
+        Me.btnUpload.Location = New System.Drawing.Point(800, 74)
         Me.btnUpload.Name = "btnUpload"
+        Me.btnUpload.Size = New System.Drawing.Size(150, 42)
         Me.btnUpload.TabIndex = 2
         Me.btnUpload.Text = "Upload"
-        AddHandler Me.btnUpload.Click, AddressOf Me.BtnUploadClick
         '
         'btnRename
         '
         Me.btnRename.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRename.Location = New System.Drawing.Point(640, 32)
+        Me.btnRename.Location = New System.Drawing.Point(1278, 59)
         Me.btnRename.Name = "btnRename"
+        Me.btnRename.Size = New System.Drawing.Size(150, 43)
         Me.btnRename.TabIndex = 6
         Me.btnRename.Text = "Rename"
-        AddHandler Me.btnRename.Click, AddressOf Me.BtnRenameClick
         '
         'tbReferenceCF
         '
-        Me.tbReferenceCF.Location = New System.Drawing.Point(400, 80)
+        Me.tbReferenceCF.Location = New System.Drawing.Point(800, 148)
         Me.tbReferenceCF.Name = "tbReferenceCF"
-        Me.tbReferenceCF.Size = New System.Drawing.Size(72, 20)
+        Me.tbReferenceCF.Size = New System.Drawing.Size(144, 31)
         Me.tbReferenceCF.TabIndex = 9
-        Me.tbReferenceCF.Text = ""
         '
         'dgData
         '
         Me.dgData.AllowSorting = False
         Me.dgData.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dgData.DataMember = ""
         Me.dgData.HeaderForeColor = System.Drawing.SystemColors.ControlText
-        Me.dgData.Location = New System.Drawing.Point(8, 8)
+        Me.dgData.Location = New System.Drawing.Point(16, 15)
         Me.dgData.Name = "dgData"
-        Me.dgData.Size = New System.Drawing.Size(384, 440)
+        Me.dgData.Size = New System.Drawing.Size(768, 1066)
         Me.dgData.TabIndex = 0
         '
         'tbNewTableName
         '
         Me.tbNewTableName.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbNewTableName.Location = New System.Drawing.Point(616, 8)
+        Me.tbNewTableName.Location = New System.Drawing.Point(1230, 15)
         Me.tbNewTableName.Name = "tbNewTableName"
-        Me.tbNewTableName.Size = New System.Drawing.Size(128, 20)
+        Me.tbNewTableName.Size = New System.Drawing.Size(256, 31)
         Me.tbNewTableName.TabIndex = 5
-        Me.tbNewTableName.Text = ""
         '
         'btnClearAllTables
         '
-        Me.btnClearAllTables.Location = New System.Drawing.Point(632, 424)
+        Me.btnClearAllTables.Location = New System.Drawing.Point(1264, 783)
         Me.btnClearAllTables.Name = "btnClearAllTables"
-        Me.btnClearAllTables.Size = New System.Drawing.Size(96, 23)
+        Me.btnClearAllTables.Size = New System.Drawing.Size(192, 42)
         Me.btnClearAllTables.TabIndex = 7
         Me.btnClearAllTables.Text = "Clear All Tables"
-        AddHandler Me.btnClearAllTables.Click, AddressOf Me.BtnClearAllTablesClick
         '
         'AgilentE4417ATableEditorForm
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(752, 453)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.ClientSize = New System.Drawing.Size(1502, 1090)
         Me.Controls.Add(Me.tbReferenceCF)
         Me.Controls.Add(Me.btnNewTable)
         Me.Controls.Add(Me.btnClearAllTables)
@@ -155,6 +154,8 @@ Public Class AgilentE4417ATableEditorForm
         Me.Text = "MainForm"
         CType(Me.dgData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 #End Region
 
@@ -169,7 +170,7 @@ Public Class AgilentE4417ATableEditorForm
         Me.lstbTables.SelectedIndex = 0
     End Sub
 
-    Private Sub BtnDownloadClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnDownloadClick(sender As System.Object, e As System.EventArgs) Handles btnDownload.Click
         Me.dgData.DataMember = Nothing
         Me.dgData.DataSource = Nothing
         Me.PwrMtr.Write("MEM:TABL:SEL " & Quote & Me.lstbTables.SelectedItem.ToString & Quote & ";")
@@ -202,7 +203,7 @@ Public Class AgilentE4417ATableEditorForm
         End If
     End Sub
 
-    Private Sub BtnUploadClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnUploadClick(sender As System.Object, e As System.EventArgs) Handles btnUpload.Click
         Dim DT As DataTable = CType(Me.dgData.DataSource, DataTable)
         Dim Frequencies As String = String.Empty
         Dim CalFactors As String = Me.tbReferenceCF.Text & ","
@@ -217,14 +218,14 @@ Public Class AgilentE4417ATableEditorForm
         Me.PwrMtr.Write("MEM:TABL:GAIN " & CalFactors & ";")
     End Sub
 
-    Private Sub BtnRenameClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnRenameClick(sender As System.Object, e As System.EventArgs) Handles btnRename.Click
         If Not Me.tbNewTableName.Text.Length = 0 Then
             Me.PwrMtr.Write("MEM:TABL:MOVE " & Quote & Me.lstbTables.SelectedItem.ToString & Quote & "," & Quote & Me.tbNewTableName.Text & Quote & ";")
             Me.GetTableNames()
         End If
     End Sub
 
-    Private Sub BtnClearAllTablesClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnClearAllTablesClick(sender As System.Object, e As System.EventArgs) Handles btnClearAllTables.Click
         Dim I As Integer = 0
         For Each Table As String In Me.lstbTables.Items
             Me.PwrMtr.Write("MEM:TABL:SEL " & Quote & Table & Quote)
@@ -242,7 +243,7 @@ Public Class AgilentE4417ATableEditorForm
         Me.GetTableNames()
     End Sub
 
-    Private Sub BtnNewTableClick(sender As System.Object, e As System.EventArgs)
+    Private Sub BtnNewTableClick(sender As System.Object, e As System.EventArgs) Handles btnNewTable.Click
         Dim NewTable As New DataTable(Me.lstbTables.SelectedItem.ToString)
         NewTable.Columns.Add(New DataColumn("Point Number"))
         NewTable.Columns.Add(New DataColumn("Frequency (GHz)"))

@@ -32,7 +32,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Program\Debug\</OutputPath>
     <DocumentationFile>FreeCal.Instruments.PowerMeters.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />
@@ -202,6 +202,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="AgilentE4417AEEPROMForm.resx">
+      <DependentUpon>AgilentE4417AEEPROMForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgilentE4417ATableEditorForm.resx">
+      <DependentUpon>AgilentE4417ATableEditorForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EEPROMPowerSensorManipulatorForm.resx">
       <DependentUpon>EEPROMPowerSensorManipulatorForm.vb</DependentUpon>
     </EmbeddedResource>

@@ -32,7 +32,7 @@
     <ProjectGuid>{190C5DCB-1BD3-4F81-9ACD-ABBC9796098A}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Program\Debug\</OutputPath>
     <DocumentationFile>FreeCal.Procedures.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />
@@ -309,6 +309,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PowerSensorProcedureForm.resx">
+      <DependentUpon>PowerSensorProcedureForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -11,7 +11,7 @@ Public Class FreeCalMDIForm
     Inherits System.Windows.Forms.Form
 
     Private WithEvents ClockTimer As System.Timers.Timer
-    Private components As System.ComponentModel.Container
+    Private components As System.ComponentModel.IContainer
     Private WithEvents menuItem14 As System.Windows.Forms.MenuItem
     Private WithEvents menuItem21 As System.Windows.Forms.MenuItem
     Private WithEvents menuItem20 As System.Windows.Forms.MenuItem
@@ -94,53 +94,54 @@ Public Class FreeCalMDIForm
     ' not be able to load this method if it was changed manually.
     Friend WithEvents MenuItem17 As System.Windows.Forms.MenuItem
     Private Sub InitializeComponent()
-        Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(FreeCalMDIForm))
-        Me.menuItem19 = New System.Windows.Forms.MenuItem
-        Me.menuItem22 = New System.Windows.Forms.MenuItem
-        Me.menuItem8 = New System.Windows.Forms.MenuItem
-        Me.menuItem9 = New System.Windows.Forms.MenuItem
-        Me.menuItem4 = New System.Windows.Forms.MenuItem
-        Me.menuItem5 = New System.Windows.Forms.MenuItem
-        Me.menuItem6 = New System.Windows.Forms.MenuItem
-        Me.menuItem7 = New System.Windows.Forms.MenuItem
-        Me.miInstruments = New System.Windows.Forms.MenuItem
-        Me.miInstrumentControl = New System.Windows.Forms.MenuItem
-        Me.menuItem2 = New System.Windows.Forms.MenuItem
-        Me.menuItem3 = New System.Windows.Forms.MenuItem
-        Me.miConversion = New System.Windows.Forms.MenuItem
-        Me.miTileHorizontally = New System.Windows.Forms.MenuItem
-        Me.miLogViewer = New System.Windows.Forms.MenuItem
-        Me.CurrentDateTime = New System.Windows.Forms.StatusBarPanel
-        Me.SelectedMenuComment = New System.Windows.Forms.StatusBarPanel
-        Me.miTileVertically = New System.Windows.Forms.MenuItem
-        Me.menuItem31 = New System.Windows.Forms.MenuItem
-        Me.menuItem30 = New System.Windows.Forms.MenuItem
-        Me.miPowerSensor = New System.Windows.Forms.MenuItem
-        Me.miCascade = New System.Windows.Forms.MenuItem
-        Me.menuItem28 = New System.Windows.Forms.MenuItem
-        Me.menuItem29 = New System.Windows.Forms.MenuItem
-        Me.miLongTermOscillatorStability = New System.Windows.Forms.MenuItem
-        Me.menuItem26 = New System.Windows.Forms.MenuItem
-        Me.menuItem27 = New System.Windows.Forms.MenuItem
-        Me.menuItem24 = New System.Windows.Forms.MenuItem
-        Me.menuItem25 = New System.Windows.Forms.MenuItem
-        Me.statusBar1 = New System.Windows.Forms.StatusBar
-        Me.menuItem23 = New System.Windows.Forms.MenuItem
-        Me.mmFreeCal = New System.Windows.Forms.MainMenu
-        Me.menuItem1 = New System.Windows.Forms.MenuItem
-        Me.miExit = New System.Windows.Forms.MenuItem
-        Me.menuItem10 = New System.Windows.Forms.MenuItem
-        Me.menuItem11 = New System.Windows.Forms.MenuItem
-        Me.menuItem13 = New System.Windows.Forms.MenuItem
-        Me.menuItem12 = New System.Windows.Forms.MenuItem
-        Me.menuItem15 = New System.Windows.Forms.MenuItem
-        Me.menuItem20 = New System.Windows.Forms.MenuItem
-        Me.menuItem21 = New System.Windows.Forms.MenuItem
-        Me.menuItem14 = New System.Windows.Forms.MenuItem
-        Me.menuItem16 = New System.Windows.Forms.MenuItem
-        Me.menuItem18 = New System.Windows.Forms.MenuItem
-        Me.miArrange = New System.Windows.Forms.MenuItem
-        Me.MenuItem17 = New System.Windows.Forms.MenuItem
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FreeCalMDIForm))
+        Me.menuItem19 = New System.Windows.Forms.MenuItem()
+        Me.menuItem22 = New System.Windows.Forms.MenuItem()
+        Me.menuItem8 = New System.Windows.Forms.MenuItem()
+        Me.menuItem9 = New System.Windows.Forms.MenuItem()
+        Me.menuItem4 = New System.Windows.Forms.MenuItem()
+        Me.menuItem5 = New System.Windows.Forms.MenuItem()
+        Me.menuItem6 = New System.Windows.Forms.MenuItem()
+        Me.menuItem7 = New System.Windows.Forms.MenuItem()
+        Me.miInstruments = New System.Windows.Forms.MenuItem()
+        Me.miInstrumentControl = New System.Windows.Forms.MenuItem()
+        Me.menuItem2 = New System.Windows.Forms.MenuItem()
+        Me.menuItem3 = New System.Windows.Forms.MenuItem()
+        Me.miConversion = New System.Windows.Forms.MenuItem()
+        Me.miTileHorizontally = New System.Windows.Forms.MenuItem()
+        Me.miLogViewer = New System.Windows.Forms.MenuItem()
+        Me.CurrentDateTime = New System.Windows.Forms.StatusBarPanel()
+        Me.SelectedMenuComment = New System.Windows.Forms.StatusBarPanel()
+        Me.miTileVertically = New System.Windows.Forms.MenuItem()
+        Me.menuItem31 = New System.Windows.Forms.MenuItem()
+        Me.menuItem30 = New System.Windows.Forms.MenuItem()
+        Me.miPowerSensor = New System.Windows.Forms.MenuItem()
+        Me.miCascade = New System.Windows.Forms.MenuItem()
+        Me.menuItem28 = New System.Windows.Forms.MenuItem()
+        Me.menuItem29 = New System.Windows.Forms.MenuItem()
+        Me.miLongTermOscillatorStability = New System.Windows.Forms.MenuItem()
+        Me.menuItem26 = New System.Windows.Forms.MenuItem()
+        Me.menuItem27 = New System.Windows.Forms.MenuItem()
+        Me.menuItem24 = New System.Windows.Forms.MenuItem()
+        Me.menuItem25 = New System.Windows.Forms.MenuItem()
+        Me.statusBar1 = New System.Windows.Forms.StatusBar()
+        Me.menuItem23 = New System.Windows.Forms.MenuItem()
+        Me.mmFreeCal = New System.Windows.Forms.MainMenu(Me.components)
+        Me.menuItem1 = New System.Windows.Forms.MenuItem()
+        Me.MenuItem17 = New System.Windows.Forms.MenuItem()
+        Me.miExit = New System.Windows.Forms.MenuItem()
+        Me.menuItem10 = New System.Windows.Forms.MenuItem()
+        Me.menuItem11 = New System.Windows.Forms.MenuItem()
+        Me.menuItem13 = New System.Windows.Forms.MenuItem()
+        Me.menuItem12 = New System.Windows.Forms.MenuItem()
+        Me.menuItem15 = New System.Windows.Forms.MenuItem()
+        Me.menuItem20 = New System.Windows.Forms.MenuItem()
+        Me.menuItem21 = New System.Windows.Forms.MenuItem()
+        Me.menuItem14 = New System.Windows.Forms.MenuItem()
+        Me.menuItem16 = New System.Windows.Forms.MenuItem()
+        Me.menuItem18 = New System.Windows.Forms.MenuItem()
+        Me.miArrange = New System.Windows.Forms.MenuItem()
         CType(Me.CurrentDateTime, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SelectedMenuComment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -228,11 +229,13 @@ Public Class FreeCalMDIForm
         Me.CurrentDateTime.Alignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.CurrentDateTime.BorderStyle = System.Windows.Forms.StatusBarPanelBorderStyle.None
         Me.CurrentDateTime.MinWidth = 100
+        Me.CurrentDateTime.Name = "CurrentDateTime"
         '
         'SelectedMenuComment
         '
         Me.SelectedMenuComment.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Contents
         Me.SelectedMenuComment.BorderStyle = System.Windows.Forms.StatusBarPanelBorderStyle.None
+        Me.SelectedMenuComment.Name = "SelectedMenuComment"
         Me.SelectedMenuComment.Width = 10
         '
         'miTileVertically
@@ -300,11 +303,11 @@ Public Class FreeCalMDIForm
         'statusBar1
         '
         Me.statusBar1.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.statusBar1.Location = New System.Drawing.Point(0, 360)
+        Me.statusBar1.Location = New System.Drawing.Point(0, 928)
         Me.statusBar1.Name = "statusBar1"
         Me.statusBar1.Panels.AddRange(New System.Windows.Forms.StatusBarPanel() {Me.SelectedMenuComment, Me.CurrentDateTime})
         Me.statusBar1.ShowPanels = True
-        Me.statusBar1.Size = New System.Drawing.Size(808, 22)
+        Me.statusBar1.Size = New System.Drawing.Size(1897, 40)
         Me.statusBar1.SizingGrip = False
         Me.statusBar1.TabIndex = 0
         '
@@ -322,6 +325,11 @@ Public Class FreeCalMDIForm
         Me.menuItem1.Index = 0
         Me.menuItem1.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem17, Me.miExit})
         Me.menuItem1.Text = "File"
+        '
+        'MenuItem17
+        '
+        Me.MenuItem17.Index = 0
+        Me.MenuItem17.Text = "TestUIControls"
         '
         'miExit
         '
@@ -388,15 +396,10 @@ Public Class FreeCalMDIForm
         Me.miArrange.Index = 3
         Me.miArrange.Text = "Arrange"
         '
-        'MenuItem17
-        '
-        Me.MenuItem17.Index = 0
-        Me.MenuItem17.Text = "TestUIControls"
-        '
         'FreeCalMDIForm
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(808, 382)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(10, 24)
+        Me.ClientSize = New System.Drawing.Size(1897, 968)
         Me.Controls.Add(Me.statusBar1)
         Me.HelpButton = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
